@@ -8,11 +8,8 @@
 
 import Alamofire
 
-protocol ApiClientProtocol {
-    func fetch(endpoint: String, completion: @escaping ([String: Any]?) -> ())
-}
 
-class ApiClient: ApiClientProtocol {
+class ApiClient {
     
     static let sharedInstance = ApiClient()
     
@@ -27,7 +24,7 @@ class ApiClient: ApiClientProtocol {
             guard response.result.isSuccess else {
                 print("Error while fetching in \(self.requestURL). Error Message: \(String(describing: response.result.error))")
                 return
-            }            
+            }
             guard let value = response.result.value as? [String: Any] else {
                 return
             }
