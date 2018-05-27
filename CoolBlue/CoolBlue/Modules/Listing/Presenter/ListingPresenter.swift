@@ -1,0 +1,34 @@
+//
+//  ListingPresenter.swift
+//  CoolBlue
+//
+//  Created by Douglas Mandarino on 26/05/18.
+//  Copyright © 2018 Douglas Mandarino. All rights reserved.
+//
+
+import Foundation
+
+//MARk: - ListingPresenter
+
+class ListingPresenter {
+    
+    var interactor: ListingInteractorProtocol?
+    var wireframe: ListingWireframeProtocol?
+    weak var delegate: ListingPresenterOutputProtocol?
+    
+    init() {
+    
+    }
+}
+
+//MARk: - ListingPresenterProtocol
+
+extension ListingPresenter: ListingPresenterProtocol {
+    
+}
+
+//MARk: - ListingInteractorOutputProtocol
+
+extension ListingPresenter: ListingInteractorOutputProtocol {
+    
+}
