@@ -6,4 +6,25 @@
 //  Copyright © 2018 Douglas Mandarino. All rights reserved.
 //
 
-import Foundation
+import XCTest
+@testable import CoolBlue
+
+class ApiClientTests: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+    }
+    
+    func testFetch() {
+        let expectation = expected(description: "Should return when calling fetch")
+        ApiClient.sharedInstance.fetch(endpoint: "", completion: { response in
+            guard let value = response?["Welcome"] as? String else {
+                XCTFail()
+                return
+            }
+            XCTAssertEqual("This is the iOS assignment\'s API. Have fun!", value)
+            expectation.fulfill()
+        })
+        waitForExpectations()
+    }
+}

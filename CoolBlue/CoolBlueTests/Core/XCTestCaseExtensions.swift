@@ -6,4 +6,15 @@
 //  Copyright © 2018 Douglas Mandarino. All rights reserved.
 //
 
-import Foundation
+import XCTest
+
+extension XCTestCase {
+    
+    func waitForExpectations() {
+        return waitForExpectations(timeout: 2, handler: nil)
+    }
+    
+    func expected(description: String) -> XCTestExpectation {
+        return self.expectation(description: description)
+    }
+}
