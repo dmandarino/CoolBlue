@@ -9,12 +9,13 @@
 import Foundation
 
 protocol ListingViewProtocol {
-//    var presenter: ListingPresenterProtocol? {get}
+    var presenter: ListingPresenterProtocol? {get}
 }
 
 protocol ListingPresenterProtocol {
-//    var interactor: ListingInteractorProtocol? {get set}
-    var delegate: ListingPresenterOutputProtocol? {get set}
+    var interactor: ListingInteractorProtocol? {get}
+    var delegate: ListingPresenterOutputProtocol? {get}
+    var wireframe: ListingWireframeProtocol? {get}
 }
 
 protocol ListingPresenterOutputProtocol: class {
@@ -22,11 +23,11 @@ protocol ListingPresenterOutputProtocol: class {
 }
 
 protocol ListingInteractorOutputProtocol: class {
-//    var delegate: ListingPresenterOutputProtocol? {get set}
+
 }
 
 protocol ListingInteractorProtocol {
-    var delegate: ListingInteractorOutputProtocol? {get set}
+    var delegate: ListingInteractorOutputProtocol? {get}
 }
 
 protocol ListingWireframeProtocol {

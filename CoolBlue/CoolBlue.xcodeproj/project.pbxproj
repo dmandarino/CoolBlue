@@ -12,7 +12,6 @@
 		5A58B8EE20BA2F0400890320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EC20BA2F0400890320 /* Main.storyboard */; };
 		5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EF20BA2F0500890320 /* Assets.xcassets */; };
 		5A58B8F320BA2F0500890320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8F120BA2F0500890320 /* LaunchScreen.storyboard */; };
-		5A58B8FE20BA2F0500890320 /* CoolBlueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B8FD20BA2F0500890320 /* CoolBlueTests.swift */; };
 		5A58B90920BA2F0500890320 /* CoolBlueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B90820BA2F0500890320 /* CoolBlueUITests.swift */; };
 		5A58B91F20BA34F800890320 /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B91E20BA34F800890320 /* ListingView.swift */; };
 		5A58B92020BA34F800890320 /* ListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B91E20BA34F800890320 /* ListingView.swift */; };
@@ -26,6 +25,7 @@
 		5A58B92D20BA379B00890320 /* ListingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B92B20BA379B00890320 /* ListingConfigurator.swift */; };
 		5A58B92F20BA3A2E00890320 /* ListingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B92E20BA3A2E00890320 /* ListingProtocols.swift */; };
 		5A58B93020BA3A2E00890320 /* ListingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B92E20BA3A2E00890320 /* ListingProtocols.swift */; };
+		5A58B93620BA5D4A00890320 /* ListingConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93420BA5D4A00890320 /* ListingConfiguratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 		5A58B8F220BA2F0500890320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A58B8F420BA2F0500890320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A58B8F920BA2F0500890320 /* CoolBlueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolBlueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A58B8FD20BA2F0500890320 /* CoolBlueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolBlueTests.swift; sourceTree = "<group>"; };
 		5A58B8FF20BA2F0500890320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A58B90420BA2F0500890320 /* CoolBlueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolBlueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A58B90820BA2F0500890320 /* CoolBlueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolBlueUITests.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		5A58B92820BA378200890320 /* ListingWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingWireframe.swift; sourceTree = "<group>"; };
 		5A58B92B20BA379B00890320 /* ListingConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingConfigurator.swift; sourceTree = "<group>"; };
 		5A58B92E20BA3A2E00890320 /* ListingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingProtocols.swift; sourceTree = "<group>"; };
+		5A58B93420BA5D4A00890320 /* ListingConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingConfiguratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 		5A58B8FC20BA2F0500890320 /* CoolBlueTests */ = {
 			isa = PBXGroup;
 			children = (
-				5A58B8FD20BA2F0500890320 /* CoolBlueTests.swift */,
+				5A58B93120BA5CB300890320 /* Modules */,
 				5A58B8FF20BA2F0500890320 /* Info.plist */,
 			);
 			path = CoolBlueTests;
@@ -219,6 +219,30 @@
 				5A58B92E20BA3A2E00890320 /* ListingProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5A58B93120BA5CB300890320 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5A58B93220BA5CDB00890320 /* Listing */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5A58B93220BA5CDB00890320 /* Listing */ = {
+			isa = PBXGroup;
+			children = (
+				5A58B93320BA5D1A00890320 /* Configurator */,
+			);
+			path = Listing;
+			sourceTree = "<group>";
+		};
+		5A58B93320BA5D1A00890320 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5A58B93420BA5D4A00890320 /* ListingConfiguratorTests.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A58B8FE20BA2F0500890320 /* CoolBlueTests.swift in Sources */,
+				5A58B93620BA5D4A00890320 /* ListingConfiguratorTests.swift in Sources */,
 				5A58B93020BA3A2E00890320 /* ListingProtocols.swift in Sources */,
 				5A58B92320BA35FD00890320 /* ListingInteractor.swift in Sources */,
 				5A58B92A20BA378200890320 /* ListingWireframe.swift in Sources */,
