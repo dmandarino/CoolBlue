@@ -6,6 +6,7 @@ target 'CoolBlue' do
   use_frameworks!
 
   # Pods for CoolBlue
+  pod 'Alamofire', '~> 4.7'
 
   target 'CoolBlueTests' do
     inherit! :search_paths
