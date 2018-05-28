@@ -14,7 +14,8 @@ protocol FetchProductListWorkerProtocol {
 }
 
 protocol FetchProductListWorkerOutputProtocol: class {
-    
+    func didFetchWithSuccess(productList: [Product])
+    func didFetchWithFailure()
 }
 
 class FetchProductListWorker: FetchProductListWorkerProtocol {
@@ -35,6 +36,11 @@ class FetchProductListWorker: FetchProductListWorkerProtocol {
                     let json = JSON(response!)
                     let objects = json["products"]
                     self.productList = self.parseProduct(json: objects)
+                    if self.productList != nil && !(self.productList?.isEmpty)! {
+                        self.delegate?.didFetchWithSuccess(productList: self.productList!)
+                    } else {
+                        self.delegate?.didFetchWithFailure()
+                    }
                 }
         })
     }

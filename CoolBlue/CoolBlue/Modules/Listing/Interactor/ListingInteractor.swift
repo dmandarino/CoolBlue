@@ -38,5 +38,7 @@ extension ListingInteractor: ListingInteractorProtocol {
 
 extension ListingInteractor: FetchProductListWorkerOutputProtocol {
     
+    func didFetchWithSuccess(productList: [Product]) {}
+    func didFetchWithFailure(){}
 }
 
