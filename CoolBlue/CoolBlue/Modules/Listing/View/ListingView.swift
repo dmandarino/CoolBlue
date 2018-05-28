@@ -15,20 +15,19 @@ class ListingView: UIViewController {
     
     var presenter: ListingPresenterProtocol?
     
-    init() {
-        super.init(nibName: "", bundle: nil)
+    override func viewDidLoad() {
         ListingConfigurator.configure(viewController: self)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fetchValuesToBePresented()
     }
 }
 
 //MARk: - ListingViewProtocol
 
 extension ListingView: ListingViewProtocol {
-   
+    
+    func fetchValuesToBePresented() {
+        presenter?.fetchValuesToBePresented()
+    }
 }
 
 //MARk: - ListingPresenterOutputProtocol

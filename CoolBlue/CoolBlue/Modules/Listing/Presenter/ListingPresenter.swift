@@ -25,6 +25,9 @@ class ListingPresenter {
 
 extension ListingPresenter: ListingPresenterProtocol {
     
+    func fetchValuesToBePresented() {
+        interactor?.fetchProducts()
+    }
 }
 
 //MARk: - ListingInteractorOutputProtocol

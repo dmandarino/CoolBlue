@@ -13,15 +13,30 @@ import Foundation
 class ListingInteractor {
     
     weak var delegate: ListingInteractorOutputProtocol?
+    private var worker:FetchProductListWorkerProtocol?
     
     init() {
-        
+        self.worker = FetchProductListWorker(delegate: self)
+    }
+    
+    convenience init(worker: FetchProductListWorkerProtocol) {
+        self.init()
+        self.worker = worker
     }
 }
 
 //MARK: - ListingInteractorOutputProtocol
 
 extension ListingInteractor: ListingInteractorProtocol {
+    
+    func fetchProducts() {
+        worker?.fetchProductList()
+    }
+}
+
+//MARK: - FetchProductListWorkerOutputProtocol
+
+extension ListingInteractor: FetchProductListWorkerOutputProtocol {
     
 }
 
