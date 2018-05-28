@@ -14,6 +14,7 @@
 		5A27579A20BBB87200A7DB8F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579820BBB87200A7DB8F /* Product.swift */; };
 		5A27579D20BBC03A00A7DB8F /* FetchProductListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */; };
 		5A27579E20BBC03A00A7DB8F /* FetchProductListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */; };
+		5A2757A320BBEAC700A7DB8F /* FetchProductListWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */; };
 		5A58B8E920BA2F0400890320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B8E820BA2F0400890320 /* AppDelegate.swift */; };
 		5A58B8EE20BA2F0400890320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EC20BA2F0400890320 /* Main.storyboard */; };
 		5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EF20BA2F0500890320 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		56CE79345C1E104C366C1A15 /* Pods-CoolBlueUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlueUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlueUITests/Pods-CoolBlueUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5A27579820BBB87200A7DB8F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductListWorker.swift; sourceTree = "<group>"; };
+		5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductListWorkerTests.swift; sourceTree = "<group>"; };
 		5A58B8E520BA2F0400890320 /* CoolBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A58B8E820BA2F0400890320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A58B8ED20BA2F0400890320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +145,22 @@
 			isa = PBXGroup;
 			children = (
 				5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		5A27579F20BBEA9700A7DB8F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5A2757A020BBEAB400A7DB8F /* Worker */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5A2757A020BBEAB400A7DB8F /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -283,6 +301,7 @@
 		5A58B93220BA5CDB00890320 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				5A27579F20BBEA9700A7DB8F /* Interactor */,
 				5A58B93320BA5D1A00890320 /* Configurator */,
 			);
 			path = Listing;
@@ -561,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A2757A320BBEAC700A7DB8F /* FetchProductListWorkerTests.swift in Sources */,
 				5A27579E20BBC03A00A7DB8F /* FetchProductListWorker.swift in Sources */,
 				5A58B94020BB46ED00890320 /* XCTestCaseExtensions.swift in Sources */,
 				5A58B93620BA5D4A00890320 /* ListingConfiguratorTests.swift in Sources */,

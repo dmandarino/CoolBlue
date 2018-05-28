@@ -21,16 +21,24 @@ protocol FetchProductListWorkerOutputProtocol: class {
 class FetchProductListWorker: FetchProductListWorkerProtocol {
     
     private var pageNumber = 0
+    private var searchEndpoint: String!
     private var productList: [Product]?
     weak private var delegate: FetchProductListWorkerOutputProtocol?
     
     init(delegate:FetchProductListWorkerOutputProtocol) {
         self.delegate = delegate
+        self.searchEndpoint = "/search?query=apple"
+    }
+    
+    convenience init(delegate:FetchProductListWorkerOutputProtocol, endpoint: String) {
+        self.init(delegate: delegate)
+        self.searchEndpoint = endpoint
     }
     
     func fetchProductList() {
         pageNumber += 1
-        ApiClient.sharedInstance.fetch(endpoint: "/search?query=apple&page=\(pageNumber)",
+        let endpoint = searchEndpoint+"&page=\(pageNumber)"
+        ApiClient.sharedInstance.fetch(endpoint: endpoint,
             completion: { response in
                 if response != nil {
                     let json = JSON(response!)
@@ -41,6 +49,8 @@ class FetchProductListWorker: FetchProductListWorkerProtocol {
                     } else {
                         self.delegate?.didFetchWithFailure()
                     }
+                } else {
+                    self.delegate?.didFetchWithFailure()
                 }
         })
     }

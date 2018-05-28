@@ -27,4 +27,15 @@ class ApiClientTests: XCTestCase {
         })
         waitForExpectations()
     }
+    
+    func testFetchFail() {
+        let expectation = expected(description: "Should return when calling fetch")
+        ApiClient.sharedInstance.fetch(endpoint: "/fail", completion: { response in
+            if response != nil {
+                XCTFail()
+            }
+            expectation.fulfill()
+        })
+        waitForExpectations()
+    }
 }
