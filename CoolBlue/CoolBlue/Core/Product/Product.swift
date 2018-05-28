@@ -11,8 +11,8 @@ import Foundation
 struct Product {
     var productId: Int
     var productName: String
-    var reviewInformation: Review
-    var usp: [String]
+//    var reviewInformation: Review
+//    var usp: [String]
     var salesPriceIncVat: Int
     var productImage: String
 }
