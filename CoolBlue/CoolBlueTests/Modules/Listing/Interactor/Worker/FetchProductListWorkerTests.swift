@@ -36,7 +36,7 @@ class FetchProductListWorkerTests: XCTestCase {
 
 private class DelegateMock: FetchProductListWorkerOutputProtocol {
     
-    var expected: XCTestExpectation
+    private var expected: XCTestExpectation
     
     init(expectation: XCTestExpectation) {
         expected = expectation

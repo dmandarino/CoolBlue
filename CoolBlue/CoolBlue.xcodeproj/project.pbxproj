@@ -15,6 +15,8 @@
 		5A27579D20BBC03A00A7DB8F /* FetchProductListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */; };
 		5A27579E20BBC03A00A7DB8F /* FetchProductListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */; };
 		5A2757A320BBEAC700A7DB8F /* FetchProductListWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */; };
+		5A40228F20BCE9550015C0E7 /* ListingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40228E20BCE9540015C0E7 /* ListingPresenterTests.swift */; };
+		5A40229220BCE9700015C0E7 /* ListingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */; };
 		5A58B8E920BA2F0400890320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B8E820BA2F0400890320 /* AppDelegate.swift */; };
 		5A58B8EE20BA2F0400890320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EC20BA2F0400890320 /* Main.storyboard */; };
 		5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EF20BA2F0500890320 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		5A27579820BBB87200A7DB8F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5A27579C20BBC03A00A7DB8F /* FetchProductListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductListWorker.swift; sourceTree = "<group>"; };
 		5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductListWorkerTests.swift; sourceTree = "<group>"; };
+		5A40228E20BCE9540015C0E7 /* ListingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPresenterTests.swift; sourceTree = "<group>"; };
+		5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingInteractorTests.swift; sourceTree = "<group>"; };
 		5A58B8E520BA2F0400890320 /* CoolBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A58B8E820BA2F0400890320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A58B8ED20BA2F0400890320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5A2757A020BBEAB400A7DB8F /* Worker */,
+				5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -163,6 +168,14 @@
 				5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */,
 			);
 			path = Worker;
+			sourceTree = "<group>";
+		};
+		5A40228D20BCE8FB0015C0E7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5A40228E20BCE9540015C0E7 /* ListingPresenterTests.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		5A58B8DC20BA2F0400890320 = {
@@ -301,6 +314,7 @@
 		5A58B93220BA5CDB00890320 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				5A40228D20BCE8FB0015C0E7 /* Presenter */,
 				5A27579F20BBEA9700A7DB8F /* Interactor */,
 				5A58B93320BA5D1A00890320 /* Configurator */,
 			);
@@ -591,6 +605,8 @@
 				5A58B93B20BA617D00890320 /* ApiClient.swift in Sources */,
 				5A58B92A20BA378200890320 /* ListingWireframe.swift in Sources */,
 				5A58B92020BA34F800890320 /* ListingView.swift in Sources */,
+				5A40229220BCE9700015C0E7 /* ListingInteractorTests.swift in Sources */,
+				5A40228F20BCE9550015C0E7 /* ListingPresenterTests.swift in Sources */,
 				5A58B92720BA364C00890320 /* ListingPresenter.swift in Sources */,
 				5A58B92D20BA379B00890320 /* ListingConfigurator.swift in Sources */,
 			);
