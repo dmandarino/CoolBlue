@@ -26,6 +26,22 @@ class ListingPresenterTests: XCTestCase {
         sut.updateView()
         waitForExpectations()
     }
+    
+    func testShowError() {
+        let expectation = expected(description: "Should call showError")
+        let delegate = DelegateMock(expectation: expectation)
+        sut.delegate = delegate
+        sut.productFetchedFailed()
+        waitForExpectations()
+    }
+    
+    func testShowProducts() {
+        let expectation = expected(description: "Should call showProducts")
+        let delegate = DelegateMock(expectation: expectation)
+        sut.delegate = delegate
+        sut.productFetched(productList: [])
+        waitForExpectations()
+    }
 }
 
 private class ListingInteractorMock: ListingInteractorProtocol {
@@ -39,6 +55,27 @@ private class ListingInteractorMock: ListingInteractorProtocol {
     
     func fetchProducts() {
         if expected.expectationDescription == "Should call fetchProducts" {
+            expected.fulfill()
+        }
+    }
+}
+
+private class DelegateMock: ListingPresenterOutputProtocol {
+
+    private var expected: XCTestExpectation
+    
+    init(expectation: XCTestExpectation) {
+        expected = expectation
+    }
+    
+    func showError() {
+        if expected.expectationDescription == "Should call showError" {
+            expected.fulfill()
+        }
+    }
+    
+    func showProducts(productList: [Product]) {
+        if expected.expectationDescription == "Should call showProducts" {
             expected.fulfill()
         }
     }
