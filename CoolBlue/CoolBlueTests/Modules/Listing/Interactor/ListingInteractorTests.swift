@@ -20,14 +20,14 @@ class ListingInteractorTests: XCTestCase {
     
     func testFetchProductList() {
         let expectation = expected(description: "Should call fetch products")
-        let worker = FetchProductListWorkerMock(expectation: expectation)
+        let worker = FetchProductWorkerMock(expectation: expectation)
         sut = ListingInteractor(worker: worker)
         sut.fetchProducts()
         waitForExpectations()
     }
 }
 
-private class FetchProductListWorkerMock: FetchProductListWorkerProtocol {
+private class FetchProductWorkerMock: FetchProductWorkerProtocol {
     
     private var expected: XCTestExpectation
     

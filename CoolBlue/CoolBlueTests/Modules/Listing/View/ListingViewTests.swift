@@ -23,7 +23,7 @@ class ListingViewTests: XCTestCase {
         let expectation = expected(description: "Should call fetchValuesToBePresented")
         let presenter = ListingPresenterMock(expectation: expectation)
         sut.presenter = presenter
-        sut.askForProducts()
+        sut.updateView()
         waitForExpectations()
     }
 }
@@ -40,7 +40,7 @@ private class ListingPresenterMock: ListingPresenterProtocol {
         expected = expectation
     }
     
-    func fetchValuesToBePresented() {
+    func updateView() {
         if expected.expectationDescription == "Should call fetchValuesToBePresented" {
             expected.fulfill()
         }

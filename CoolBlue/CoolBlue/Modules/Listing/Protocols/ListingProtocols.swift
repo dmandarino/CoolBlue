@@ -11,7 +11,7 @@ import Foundation
 protocol ListingViewProtocol {
     var presenter: ListingPresenterProtocol? {get}
     
-    func askForProducts()
+    func updateView()
 }
 
 protocol ListingPresenterProtocol {
@@ -19,15 +19,17 @@ protocol ListingPresenterProtocol {
     var delegate: ListingPresenterOutputProtocol? {get}
     var wireframe: ListingWireframeProtocol? {get}
     
-    func fetchValuesToBePresented()
+    func updateView()
 }
 
 protocol ListingPresenterOutputProtocol: class {
-    
+    func showError()
+    func showProducts(productList: [Product])
 }
 
 protocol ListingInteractorOutputProtocol: class {
-
+    func productFetched(productList: [Product])
+    func productFetchedFailed()
 }
 
 protocol ListingInteractorProtocol {

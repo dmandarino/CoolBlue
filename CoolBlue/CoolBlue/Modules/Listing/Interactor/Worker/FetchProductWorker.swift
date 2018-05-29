@@ -1,5 +1,5 @@
 //
-//  FetchProductListWorker.swift
+//  FetchProductWorker.swift
 //  CoolBlue
 //
 //  Created by Douglas Mandarino on 28/05/18.
@@ -9,28 +9,28 @@
 import Foundation
 import SwiftyJSON
 
-protocol FetchProductListWorkerProtocol {
+protocol FetchProductWorkerProtocol {
     func fetchProductList()
 }
 
-protocol FetchProductListWorkerOutputProtocol: class {
+protocol FetchProductWorkerOutputProtocol: class {
     func didFetchWithSuccess(productList: [Product])
     func didFetchWithFailure()
 }
 
-class FetchProductListWorker: FetchProductListWorkerProtocol {
+class FetchProductWorker: FetchProductWorkerProtocol {
     
     private var pageNumber = 0
     private var searchEndpoint: String!
     private var productList: [Product]?
-    weak private var delegate: FetchProductListWorkerOutputProtocol?
+    weak private var delegate: FetchProductWorkerOutputProtocol?
     
-    init(delegate:FetchProductListWorkerOutputProtocol) {
+    init(delegate:FetchProductWorkerOutputProtocol) {
         self.delegate = delegate
         self.searchEndpoint = "/search?query=apple"
     }
     
-    convenience init(delegate:FetchProductListWorkerOutputProtocol, endpoint: String) {
+    convenience init(delegate:FetchProductWorkerOutputProtocol, endpoint: String) {
         self.init(delegate: delegate)
         self.searchEndpoint = endpoint
     }

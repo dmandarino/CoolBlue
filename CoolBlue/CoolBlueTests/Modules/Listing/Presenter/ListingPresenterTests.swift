@@ -23,7 +23,7 @@ class ListingPresenterTests: XCTestCase {
         let expectation = expected(description: "Should call fetchProducts")
         let interactor = ListingInteractorMock(expectation: expectation)
         sut.interactor = interactor
-        sut.fetchValuesToBePresented()
+        sut.updateView()
         waitForExpectations()
     }
 }

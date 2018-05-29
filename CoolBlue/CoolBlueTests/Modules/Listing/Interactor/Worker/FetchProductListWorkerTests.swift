@@ -11,7 +11,7 @@ import XCTest
 
 class FetchProductListWorkerTests: XCTestCase {
 
-    var sut: FetchProductListWorker!
+    var sut: FetchProductWorker!
     
     override func setUp() {
         super.setUp()
@@ -20,7 +20,7 @@ class FetchProductListWorkerTests: XCTestCase {
     func testFetchProductListWithSuccess() {
         let expectation = expected(description: "Should call delegate with Success")
         let delegate = DelegateMock(expectation: expectation)
-        sut = FetchProductListWorker(delegate: delegate)
+        sut = FetchProductWorker(delegate: delegate)
         sut.fetchProductList()
         waitForExpectations()
     }
@@ -28,13 +28,13 @@ class FetchProductListWorkerTests: XCTestCase {
     func testFetchProductListWithFailure() {
         let expectation = expected(description: "Should call delegate with Failure")
         let delegate = DelegateMock(expectation: expectation)
-        sut = FetchProductListWorker(delegate: delegate, endpoint: "/")
+        sut = FetchProductWorker(delegate: delegate, endpoint: "/")
         sut.fetchProductList()
         waitForExpectations()
     }
 }
 
-private class DelegateMock: FetchProductListWorkerOutputProtocol {
+private class DelegateMock: FetchProductWorkerOutputProtocol {
     
     private var expected: XCTestExpectation
     

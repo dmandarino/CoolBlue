@@ -25,7 +25,7 @@ class ListingPresenter {
 
 extension ListingPresenter: ListingPresenterProtocol {
     
-    func fetchValuesToBePresented() {
+    func updateView() {
         interactor?.fetchProducts()
     }
 }
@@ -34,4 +34,11 @@ extension ListingPresenter: ListingPresenterProtocol {
 
 extension ListingPresenter: ListingInteractorOutputProtocol {
     
+    func productFetched(productList: [Product]){
+        delegate?.showProducts(productList: productList)
+    }
+   
+    func productFetchedFailed() {
+        delegate?.showError()
+    }
 }

@@ -17,7 +17,7 @@ class ListingView: UIViewController {
     
     override func viewDidLoad() {
         ListingConfigurator.configure(viewController: self)
-        askForProducts()
+        updateView()
     }
 }
 
@@ -25,8 +25,8 @@ class ListingView: UIViewController {
 
 extension ListingView: ListingViewProtocol {
     
-    func askForProducts() {
-        presenter?.fetchValuesToBePresented()
+    func updateView() {
+        presenter?.updateView()
     }
 }
 
@@ -34,4 +34,22 @@ extension ListingView: ListingViewProtocol {
 
 extension ListingView: ListingPresenterOutputProtocol {
     
+    func showProducts(productList: [Product]) {
+        
+    }
+    
+    func showError() {
+        presentErrorAlertController()
+    }
+    
+    private func presentErrorAlertController() {
+        let alertController = UIAlertController(title: "Oops", message: "Something went wrong. Do you want to try again?", preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: .default) { (action:UIAlertAction) in
+            self.updateView()
+        }
+        let dissmissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(tryAgainAction)
+        alertController.addAction(dissmissAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
