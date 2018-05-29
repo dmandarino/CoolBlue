@@ -62,7 +62,7 @@ class FetchProductWorker: FetchProductWorkerProtocol {
             let productName = value["productName"].string,
             let salesPriceIncVat = value["salesPriceIncVat"].int,
             let productImage = value["productImage"].string else {
-                return []
+                return productList
             }
             
             let product = Product(
