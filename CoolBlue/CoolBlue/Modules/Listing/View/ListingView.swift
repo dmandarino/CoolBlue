@@ -17,7 +17,7 @@ class ListingView: UIViewController {
     
     override func viewDidLoad() {
         ListingConfigurator.configure(viewController: self)
-        fetchValuesToBePresented()
+        askForProducts()
     }
 }
 
@@ -25,7 +25,7 @@ class ListingView: UIViewController {
 
 extension ListingView: ListingViewProtocol {
     
-    func fetchValuesToBePresented() {
+    func askForProducts() {
         presenter?.fetchValuesToBePresented()
     }
 }

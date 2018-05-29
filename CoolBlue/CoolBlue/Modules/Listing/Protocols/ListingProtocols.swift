@@ -10,6 +10,8 @@ import Foundation
 
 protocol ListingViewProtocol {
     var presenter: ListingPresenterProtocol? {get}
+    
+    func askForProducts()
 }
 
 protocol ListingPresenterProtocol {
