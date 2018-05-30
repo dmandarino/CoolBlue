@@ -10,6 +10,10 @@
 		1ED6F62382015D6355D42167 /* Pods_CoolBlue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A684A6FE70580DF0F9710D37 /* Pods_CoolBlue.framework */; };
 		2991203A29570A427E1FE997 /* Pods_CoolBlueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5FCA49A41BD5FB5B4D5177D /* Pods_CoolBlueTests.framework */; };
 		5903D135734E27CF6F54D897 /* Pods_CoolBlueUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6F7D506A4E88DD17A9D2D47 /* Pods_CoolBlueUITests.framework */; };
+		5A25F7F520BE73B4004494BC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25F7F420BE73B4004494BC /* ProductCell.swift */; };
+		5A25F7F620BE73B4004494BC /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A25F7F420BE73B4004494BC /* ProductCell.swift */; };
+		5A25F7F820BE73FB004494BC /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A25F7F720BE73FB004494BC /* ProductCell.xib */; };
+		5A25F7F920BE73FB004494BC /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A25F7F720BE73FB004494BC /* ProductCell.xib */; };
 		5A27579920BBB87200A7DB8F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579820BBB87200A7DB8F /* Product.swift */; };
 		5A27579A20BBB87200A7DB8F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579820BBB87200A7DB8F /* Product.swift */; };
 		5A27579D20BBC03A00A7DB8F /* FetchProductWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A27579C20BBC03A00A7DB8F /* FetchProductWorker.swift */; };
@@ -39,8 +43,6 @@
 		5A58B93B20BA617D00890320 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93920BA617D00890320 /* ApiClient.swift */; };
 		5A58B93E20BB0CFB00890320 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93D20BB0CFB00890320 /* ApiClientTests.swift */; };
 		5A58B94020BB46ED00890320 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93F20BB46ED00890320 /* XCTestCaseExtensions.swift */; };
-		A23DFA1820BE188F004C8146 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23DFA1720BE188F004C8146 /* ProductCell.xib */; };
-		A23DFA1A20BE1E4C004C8146 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23DFA1920BE1E4C004C8146 /* ProductCell.swift */; };
 		A23DFA2220BE34F3004C8146 /* ListingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23DFA2120BE34F3004C8146 /* ListingView.xib */; };
 		A23DFA2520BE39F6004C8146 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23DFA2420BE39F6004C8146 /* ColorUtil.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		173CEFC54FFA5351D7E4F1D4 /* Pods-CoolBlue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlue.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlue/Pods-CoolBlue.release.xcconfig"; sourceTree = "<group>"; };
 		56CE79345C1E104C366C1A15 /* Pods-CoolBlueUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlueUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlueUITests/Pods-CoolBlueUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5A25F7F420BE73B4004494BC /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		5A25F7F720BE73FB004494BC /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		5A27579820BBB87200A7DB8F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5A27579C20BBC03A00A7DB8F /* FetchProductWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductWorker.swift; sourceTree = "<group>"; };
 		5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductListWorkerTests.swift; sourceTree = "<group>"; };
@@ -93,8 +97,6 @@
 		5A58B93F20BB46ED00890320 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
 		5E149B2F2E1424EB75DD20DB /* Pods-CoolBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlue/Pods-CoolBlue.debug.xcconfig"; sourceTree = "<group>"; };
 		7B79C795160DF17CEE0C942C /* Pods-CoolBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlueTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlueTests/Pods-CoolBlueTests.release.xcconfig"; sourceTree = "<group>"; };
-		A23DFA1720BE188F004C8146 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
-		A23DFA1920BE1E4C004C8146 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		A23DFA2120BE34F3004C8146 /* ListingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingView.xib; sourceTree = "<group>"; };
 		A23DFA2420BE39F6004C8146 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		A684A6FE70580DF0F9710D37 /* Pods_CoolBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -387,8 +389,8 @@
 		A23DFA1620BE187B004C8146 /* ProductCell */ = {
 			isa = PBXGroup;
 			children = (
-				A23DFA1720BE188F004C8146 /* ProductCell.xib */,
-				A23DFA1920BE1E4C004C8146 /* ProductCell.swift */,
+				5A25F7F420BE73B4004494BC /* ProductCell.swift */,
+				5A25F7F720BE73FB004494BC /* ProductCell.xib */,
 			);
 			path = ProductCell;
 			sourceTree = "<group>";
@@ -510,8 +512,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A23DFA2220BE34F3004C8146 /* ListingView.xib in Resources */,
+				5A25F7F820BE73FB004494BC /* ProductCell.xib in Resources */,
 				5A58B8F320BA2F0500890320 /* LaunchScreen.storyboard in Resources */,
-				A23DFA1820BE188F004C8146 /* ProductCell.xib in Resources */,
 				5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A25F7F920BE73FB004494BC /* ProductCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,7 +618,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A58B92F20BA3A2E00890320 /* ListingProtocols.swift in Sources */,
-				A23DFA1A20BE1E4C004C8146 /* ProductCell.swift in Sources */,
 				5A58B93A20BA617D00890320 /* ApiClient.swift in Sources */,
 				A23DFA2520BE39F6004C8146 /* ColorUtil.swift in Sources */,
 				5A58B8E920BA2F0400890320 /* AppDelegate.swift in Sources */,
@@ -624,6 +626,7 @@
 				5A58B92C20BA379B00890320 /* ListingConfigurator.swift in Sources */,
 				5A58B92920BA378200890320 /* ListingWireframe.swift in Sources */,
 				5A27579920BBB87200A7DB8F /* Product.swift in Sources */,
+				5A25F7F520BE73B4004494BC /* ProductCell.swift in Sources */,
 				5A58B91F20BA34F800890320 /* ListingView.swift in Sources */,
 				5A58B92220BA35FD00890320 /* ListingInteractor.swift in Sources */,
 			);
@@ -645,6 +648,7 @@
 				5A40229520BCF1BC0015C0E7 /* ListingViewTests.swift in Sources */,
 				5A58B92A20BA378200890320 /* ListingWireframe.swift in Sources */,
 				5A58B92020BA34F800890320 /* ListingView.swift in Sources */,
+				5A25F7F620BE73B4004494BC /* ProductCell.swift in Sources */,
 				5A40229220BCE9700015C0E7 /* ListingInteractorTests.swift in Sources */,
 				5A40228F20BCE9550015C0E7 /* ListingPresenterTests.swift in Sources */,
 				5A58B92720BA364C00890320 /* ListingPresenter.swift in Sources */,

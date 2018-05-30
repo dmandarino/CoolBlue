@@ -23,12 +23,16 @@
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZK7-k3-9Cw">
                     <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e4a-Fl-4a1">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dek-wC-cu5">
+                        <size key="itemSize" width="350" height="212"/>
+                        <size key="headerReferenceSize" width="0.0" height="15"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="eIf-DO-bJT"/>
+                        <outlet property="delegate" destination="-1" id="AR7-WQ-fa3"/>
+                    </connections>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,6 +40,7 @@
                 <constraint firstItem="ZK7-k3-9Cw" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="0qq-R4-Muo"/>
                 <constraint firstItem="ZK7-k3-9Cw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="DcR-d7-CEb"/>
                 <constraint firstItem="ZK7-k3-9Cw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="gGG-jV-NnH"/>
+                <constraint firstItem="ZK7-k3-9Cw" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="jkd-zH-FNT"/>
                 <constraint firstItem="ZK7-k3-9Cw" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="xdZ-sx-44T"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

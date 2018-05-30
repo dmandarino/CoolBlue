@@ -15,22 +15,20 @@ class ListingView: UIViewController {
 
     var presenter: ListingPresenterProtocol?
     
-    @IBOutlet var collectionView: UICollectionView!
-    
-    var labels = ["label1", "label2", "label3"]
+    @IBOutlet weak var collectionView: UICollectionView!
     
     convenience init() {
         self.init(nibName: "ListingView", bundle: nil)
+        ListingConfigurator.configure(viewController: self)
     }
     
     override func viewDidLoad() {
-        ListingConfigurator.configure(viewController: self)
-        setupScreen()
+        setupView()
     }
     
-    private func setupScreen() {
+    private func setupView() {
+        self.collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cell")
         updateView()
-        setupCollectionView()
     }
 }
 
@@ -69,25 +67,12 @@ extension ListingView: ListingPresenterOutputProtocol {
 
 extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    
-    
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor.black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCell
         return cell
-    }
-    
-    private func setupCollectionView() {
-        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
 }
