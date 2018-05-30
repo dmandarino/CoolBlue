@@ -19,7 +19,6 @@
 		5A40229220BCE9700015C0E7 /* ListingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */; };
 		5A40229520BCF1BC0015C0E7 /* ListingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40229420BCF1BC0015C0E7 /* ListingViewTests.swift */; };
 		5A58B8E920BA2F0400890320 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B8E820BA2F0400890320 /* AppDelegate.swift */; };
-		5A58B8EE20BA2F0400890320 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EC20BA2F0400890320 /* Main.storyboard */; };
 		5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8EF20BA2F0500890320 /* Assets.xcassets */; };
 		5A58B8F320BA2F0500890320 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A58B8F120BA2F0500890320 /* LaunchScreen.storyboard */; };
 		5A58B90920BA2F0500890320 /* CoolBlueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B90820BA2F0500890320 /* CoolBlueUITests.swift */; };
@@ -42,6 +41,8 @@
 		5A58B94020BB46ED00890320 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93F20BB46ED00890320 /* XCTestCaseExtensions.swift */; };
 		A23DFA1820BE188F004C8146 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23DFA1720BE188F004C8146 /* ProductCell.xib */; };
 		A23DFA1A20BE1E4C004C8146 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23DFA1920BE1E4C004C8146 /* ProductCell.swift */; };
+		A23DFA2220BE34F3004C8146 /* ListingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23DFA2120BE34F3004C8146 /* ListingView.xib */; };
+		A23DFA2520BE39F6004C8146 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23DFA2420BE39F6004C8146 /* ColorUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +73,6 @@
 		5A40229420BCF1BC0015C0E7 /* ListingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewTests.swift; sourceTree = "<group>"; };
 		5A58B8E520BA2F0400890320 /* CoolBlue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolBlue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A58B8E820BA2F0400890320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A58B8ED20BA2F0400890320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A58B8EF20BA2F0500890320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A58B8F220BA2F0500890320 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A58B8F420BA2F0500890320 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		7B79C795160DF17CEE0C942C /* Pods-CoolBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlueTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlueTests/Pods-CoolBlueTests.release.xcconfig"; sourceTree = "<group>"; };
 		A23DFA1720BE188F004C8146 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		A23DFA1920BE1E4C004C8146 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A23DFA2120BE34F3004C8146 /* ListingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingView.xib; sourceTree = "<group>"; };
+		A23DFA2420BE39F6004C8146 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		A684A6FE70580DF0F9710D37 /* Pods_CoolBlue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolBlue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1801C682EA234586812D737 /* Pods-CoolBlueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlueTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlueTests/Pods-CoolBlueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5FCA49A41BD5FB5B4D5177D /* Pods_CoolBlueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolBlueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,7 +222,6 @@
 				5A58B93820BA614F00890320 /* Core */,
 				5A58B91620BA32C200890320 /* Modules */,
 				5A58B8E820BA2F0400890320 /* AppDelegate.swift */,
-				5A58B8EC20BA2F0400890320 /* Main.storyboard */,
 				5A58B8EF20BA2F0500890320 /* Assets.xcassets */,
 				5A58B8F120BA2F0500890320 /* LaunchScreen.storyboard */,
 				5A58B8F420BA2F0500890320 /* Info.plist */,
@@ -273,6 +274,7 @@
 			children = (
 				A23DFA1620BE187B004C8146 /* ProductCell */,
 				5A58B91E20BA34F800890320 /* ListingView.swift */,
+				A23DFA2120BE34F3004C8146 /* ListingView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,6 +350,7 @@
 		5A58B93820BA614F00890320 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A23DFA2320BE39DD004C8146 /* Util */,
 				5A27579720BBB85300A7DB8F /* Product */,
 				5A8C414520BBAA3E00AC2376 /* ApiClient */,
 			);
@@ -388,6 +391,14 @@
 				A23DFA1920BE1E4C004C8146 /* ProductCell.swift */,
 			);
 			path = ProductCell;
+			sourceTree = "<group>";
+		};
+		A23DFA2320BE39DD004C8146 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A23DFA2420BE39F6004C8146 /* ColorUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -498,10 +509,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A23DFA2220BE34F3004C8146 /* ListingView.xib in Resources */,
 				5A58B8F320BA2F0500890320 /* LaunchScreen.storyboard in Resources */,
 				A23DFA1820BE188F004C8146 /* ProductCell.xib in Resources */,
 				5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */,
-				5A58B8EE20BA2F0400890320 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +617,7 @@
 				5A58B92F20BA3A2E00890320 /* ListingProtocols.swift in Sources */,
 				A23DFA1A20BE1E4C004C8146 /* ProductCell.swift in Sources */,
 				5A58B93A20BA617D00890320 /* ApiClient.swift in Sources */,
+				A23DFA2520BE39F6004C8146 /* ColorUtil.swift in Sources */,
 				5A58B8E920BA2F0400890320 /* AppDelegate.swift in Sources */,
 				5A58B92620BA364C00890320 /* ListingPresenter.swift in Sources */,
 				5A27579D20BBC03A00A7DB8F /* FetchProductWorker.swift in Sources */,
@@ -664,14 +676,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5A58B8EC20BA2F0400890320 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5A58B8ED20BA2F0400890320 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5A58B8F120BA2F0500890320 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
