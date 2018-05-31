@@ -27,7 +27,7 @@ class ListingView: UIViewController {
     }
     
     private func setupView() {
-        self.collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "cell")
+        setupCollectionView()
         updateView()
     }
 }
@@ -74,5 +74,12 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCell
         return cell
+    }
+    
+    private func setupCollectionView() {
+        self.collectionView.register(UINib.init(nibName: "ProductCell", bundle: nil),
+                                         forCellWithReuseIdentifier: "cell")
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
     }
 }

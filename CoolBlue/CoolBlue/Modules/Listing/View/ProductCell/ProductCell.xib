@@ -9,32 +9,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductCell" customModule="CoolBlue" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="5pE-jP-Gb1">
+        <view contentMode="scaleToFill" id="DFf-bc-76L" customClass="ProductCell" customModule="CoolBlue" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="350" height="212"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="350" height="212"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OYK-GP-LMz">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="212"/>
-                        <color key="backgroundColor" red="0.23921568630000001" green="0.56078431370000004" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </subviews>
-            </view>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qnA-gL-pOL">
+                    <rect key="frame" x="0.0" y="0.0" width="145" height="212"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="145" id="P35-Pq-U8q"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPhone 8 64Gb - Space Gray" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-4N-Hua">
+                    <rect key="frame" x="153" y="13" width="181" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="t0Z-eu-3GU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.56078431370000004" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="129,-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-Bj-xNO">
+                    <rect key="frame" x="153" y="182.5" width="181" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="181" id="KDV-ih-3xQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="OYK-GP-LMz" secondAttribute="bottom" id="0Rx-vx-ZBI"/>
-                <constraint firstItem="OYK-GP-LMz" firstAttribute="centerY" secondItem="5pE-jP-Gb1" secondAttribute="centerY" id="21i-sf-bz9"/>
-                <constraint firstAttribute="trailing" secondItem="OYK-GP-LMz" secondAttribute="trailing" id="BSK-rG-LNh"/>
-                <constraint firstItem="OYK-GP-LMz" firstAttribute="top" secondItem="5pE-jP-Gb1" secondAttribute="top" id="Prj-Xm-69Q"/>
-                <constraint firstItem="OYK-GP-LMz" firstAttribute="leading" secondItem="5pE-jP-Gb1" secondAttribute="leading" id="bJ5-hx-QSa"/>
-                <constraint firstItem="OYK-GP-LMz" firstAttribute="centerX" secondItem="5pE-jP-Gb1" secondAttribute="centerX" id="deN-Cg-GZN"/>
+                <constraint firstItem="D5K-4N-Hua" firstAttribute="top" secondItem="tqf-ol-urD" secondAttribute="top" constant="13" id="08N-CG-HwR"/>
+                <constraint firstItem="qnA-gL-pOL" firstAttribute="leading" secondItem="tqf-ol-urD" secondAttribute="leading" id="7uw-Em-Wkf"/>
+                <constraint firstItem="qnA-gL-pOL" firstAttribute="bottom" secondItem="tqf-ol-urD" secondAttribute="bottom" id="9oG-Kk-Hi3"/>
+                <constraint firstItem="sQq-Bj-xNO" firstAttribute="leading" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="8" id="FXe-HW-xsn"/>
+                <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="D5K-4N-Hua" secondAttribute="trailing" constant="16" id="Jg1-xS-4CO"/>
+                <constraint firstItem="qnA-gL-pOL" firstAttribute="centerY" secondItem="DFf-bc-76L" secondAttribute="centerY" id="Vlb-kB-4MV"/>
+                <constraint firstItem="qnA-gL-pOL" firstAttribute="leading" secondItem="tqf-ol-urD" secondAttribute="leading" id="dOs-b9-jCa"/>
+                <constraint firstItem="D5K-4N-Hua" firstAttribute="leading" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="8" id="mEw-F2-2cZ"/>
+                <constraint firstItem="qnA-gL-pOL" firstAttribute="top" secondItem="tqf-ol-urD" secondAttribute="top" id="p8f-bN-MYS"/>
+                <constraint firstItem="tqf-ol-urD" firstAttribute="bottom" secondItem="sQq-Bj-xNO" secondAttribute="bottom" constant="9" id="pFv-tp-oW1"/>
+                <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="sQq-Bj-xNO" secondAttribute="trailing" constant="16" id="qjh-3C-yQ3"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="GgF-EY-YFb"/>
-            <size key="customSize" width="658" height="337"/>
-            <point key="canvasLocation" x="-201" y="-250"/>
-        </collectionViewCell>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="tqf-ol-urD"/>
+            <point key="canvasLocation" x="-331" y="-264"/>
+        </view>
     </objects>
 </document>
