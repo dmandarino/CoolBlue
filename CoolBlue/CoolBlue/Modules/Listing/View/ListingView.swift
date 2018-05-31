@@ -67,15 +67,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let productId: Int
-        
-        if isFiltering() {
-            productId = filteredProducList[indexPath.row].productId
-        } else {
-            productId = productList[indexPath.row].productId
-        }
-        
-        presenter?.didSelectedProduct(productId: productId)
+        notifyDidSelectedProduct(forIndexPath: indexPath)
     }
     
     private func cellConfigured(cell: ProductCell, forIndex index: Int) -> ProductCell {
@@ -119,6 +111,18 @@ extension ListingView: ListingViewProtocol {
     
     func updateView() {
         presenter?.updateView()
+    }
+    
+    func notifyDidSelectedProduct(forIndexPath indexPath: IndexPath) {
+        guard isProductListNotEmpty() else {
+            return
+        }
+        
+        if isFiltering() {
+            presenter?.didSelectedProduct(productId: filteredProducList[indexPath.row].productId)
+        } else {
+            presenter?.didSelectedProduct(productId: productList[indexPath.row].productId)
+        }
     }
 }
 

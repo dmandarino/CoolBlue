@@ -26,6 +26,14 @@ class ListingViewTests: XCTestCase {
         sut.updateView()
         waitForExpectations()
     }
+    
+    func testNotifyDidSelectedProduct() {
+        let expectation = expected(description: "Should call notifyDidSelectedProduct")
+        let presenter = ListingPresenterMock(expectation: expectation)
+        sut.presenter = presenter
+        sut.presenter?.didSelectedProduct(productId: 1)
+        waitForExpectations()
+    }
 }
 
 private class ListingPresenterMock: ListingPresenterProtocol {
@@ -42,6 +50,12 @@ private class ListingPresenterMock: ListingPresenterProtocol {
     
     func updateView() {
         if expected.expectationDescription == "Should call fetchValuesToBePresented" {
+            expected.fulfill()
+        }
+    }
+    
+    func didSelectedProduct(productId: Int) {
+        if expected.expectationDescription == "Should call notifyDidSelectedProduct" {
             expected.fulfill()
         }
     }
