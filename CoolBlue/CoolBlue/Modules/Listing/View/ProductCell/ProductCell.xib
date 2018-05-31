@@ -21,17 +21,8 @@
                         <constraint firstAttribute="width" constant="145" id="P35-Pq-U8q"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPhone 8 64Gb - Space Gray" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-4N-Hua">
-                    <rect key="frame" x="153" y="13" width="181" height="64"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="64" id="t0Z-eu-3GU"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" red="0.23921568630000001" green="0.56078431370000004" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="129,-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-Bj-xNO">
-                    <rect key="frame" x="153" y="182.5" width="181" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€ 219" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQq-Bj-xNO">
+                    <rect key="frame" x="153" y="182.5" width="181" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="181" id="KDV-ih-3xQ"/>
                     </constraints>
@@ -39,11 +30,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPhone 8 64Gb - Space Gray" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-4N-Hua">
+                    <rect key="frame" x="153" y="9" width="181" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="3aX-Uc-WgP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.23921568630000001" green="0.56078431370000004" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="D5K-4N-Hua" firstAttribute="top" secondItem="tqf-ol-urD" secondAttribute="top" constant="13" id="08N-CG-HwR"/>
                 <constraint firstItem="qnA-gL-pOL" firstAttribute="leading" secondItem="tqf-ol-urD" secondAttribute="leading" id="7uw-Em-Wkf"/>
+                <constraint firstItem="D5K-4N-Hua" firstAttribute="top" secondItem="tqf-ol-urD" secondAttribute="top" constant="9" id="97E-JH-RKp"/>
                 <constraint firstItem="qnA-gL-pOL" firstAttribute="bottom" secondItem="tqf-ol-urD" secondAttribute="bottom" id="9oG-Kk-Hi3"/>
                 <constraint firstItem="sQq-Bj-xNO" firstAttribute="leading" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="8" id="FXe-HW-xsn"/>
                 <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="D5K-4N-Hua" secondAttribute="trailing" constant="16" id="Jg1-xS-4CO"/>
@@ -56,6 +56,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="tqf-ol-urD"/>
+            <connections>
+                <outlet property="productName" destination="D5K-4N-Hua" id="Obn-XE-whA"/>
+                <outlet property="productPrice" destination="sQq-Bj-xNO" id="gSz-ig-KMa"/>
+            </connections>
             <point key="canvasLocation" x="-331" y="-264"/>
         </view>
     </objects>

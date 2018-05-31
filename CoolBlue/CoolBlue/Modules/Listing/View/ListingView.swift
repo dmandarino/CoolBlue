@@ -14,6 +14,7 @@ import UIKit
 class ListingView: UIViewController {
 
     var presenter: ListingPresenterProtocol?
+    private var productList: [Product]?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -46,7 +47,8 @@ extension ListingView: ListingViewProtocol {
 extension ListingView: ListingPresenterOutputProtocol {
     
     func showProducts(productList: [Product]) {
-        
+        self.productList = productList
+        updateProductList()
     }
     
     func showError() {
@@ -73,7 +75,16 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCell
+        guard productList != nil else {
+            return cell
+        }
+        cell.productName.text = productList?[indexPath.item].productName
+        cell.productPrice.text = productList![indexPath.item].salesPriceIncVat.currency
         return cell
+    }
+    
+    private func updateProductList() {
+        collectionView.reloadData()
     }
     
     private func setupCollectionView() {
