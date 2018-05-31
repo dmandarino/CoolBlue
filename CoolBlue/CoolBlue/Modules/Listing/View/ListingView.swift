@@ -15,11 +15,6 @@ class ListingView: UIViewController {
 
     var presenter: ListingPresenterProtocol?
     private var productList: [Product]?
-    private var imageList: [UIImage] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -54,14 +49,6 @@ extension ListingView: ListingPresenterOutputProtocol {
     func showProducts(productList: [Product]) {
         self.productList = productList
         updateProductList()
-        
-//        ApiClient.sharedInstance.fetchImage(forURLString: "https://image.coolblue.nl/300x750/products/984093", completion: { image in
-//            self.imageList.append(image)
-//        })
-        
-//        for product in productList {
-//            let imagePath = product.productImage
-//        }
     }
     
     func showError() {
@@ -88,9 +75,11 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCell
+        
         guard productList != nil else {
             return cell
         }
+        
         let url = URL(string: productList![indexPath.item].productImage)!
         cell.productName.text = productList?[indexPath.item].productName
         cell.productPrice.text = productList![indexPath.item].salesPriceIncVat.currency
