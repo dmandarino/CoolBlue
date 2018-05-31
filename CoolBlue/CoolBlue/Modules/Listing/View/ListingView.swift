@@ -113,7 +113,7 @@ extension ListingView: ListingViewProtocol {
         presenter?.updateView()
     }
     
-    func notifyDidSelectedProduct(forIndexPath indexPath: IndexPath) {
+    private func notifyDidSelectedProduct(forIndexPath indexPath: IndexPath) {
         guard isProductListNotEmpty() else {
             return
         }

@@ -13,7 +13,6 @@ protocol ListingViewProtocol {
     var presenter: ListingPresenterProtocol? {get}
     
     func updateView()
-    func notifyDidSelectedProduct(forIndexPath indexPath: IndexPath)
 }
 
 protocol ListingPresenterProtocol {
