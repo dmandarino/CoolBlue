@@ -15,6 +15,11 @@ class ListingView: UIViewController {
 
     var presenter: ListingPresenterProtocol?
     private var productList: [Product]?
+    private var imageList: [UIImage] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -49,6 +54,14 @@ extension ListingView: ListingPresenterOutputProtocol {
     func showProducts(productList: [Product]) {
         self.productList = productList
         updateProductList()
+        
+        ApiClient.sharedInstance.fetchImage(forURLString: "https://image.coolblue.nl/300x750/products/984093", completion: { image in
+            self.imageList.append(image)
+        })
+        
+//        for product in productList {
+//            let imagePath = product.productImage
+//        }
     }
     
     func showError() {
@@ -80,6 +93,11 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         cell.productName.text = productList?[indexPath.item].productName
         cell.productPrice.text = productList![indexPath.item].salesPriceIncVat.currency
+        
+        if !imageList.isEmpty {
+            cell.productImage.image = imageList[0]
+        }
+        
         return cell
     }
     
@@ -88,8 +106,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     private func setupCollectionView() {
-        self.collectionView.register(UINib.init(nibName: "ProductCell", bundle: nil),
-                                         forCellWithReuseIdentifier: "cell")
+        self.collectionView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }
