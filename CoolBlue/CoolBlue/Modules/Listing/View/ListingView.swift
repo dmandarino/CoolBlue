@@ -116,13 +116,16 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
 extension ListingView: UISearchResultsUpdating {
     
     private func setupSearchController() {
+        UITextField.appearance(whenContainedInInstancesOf:
+            [UISearchBar.self]).defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.white]
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "What are you looking for?"
+        searchController.searchBar.tintColor = UIColor.white
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+        
     }
 }
