@@ -44,6 +44,10 @@
 		5A58B93B20BA617D00890320 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93920BA617D00890320 /* ApiClient.swift */; };
 		5A58B93E20BB0CFB00890320 /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93D20BB0CFB00890320 /* ApiClientTests.swift */; };
 		5A58B94020BB46ED00890320 /* XCTestCaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A58B93F20BB46ED00890320 /* XCTestCaseExtensions.swift */; };
+		5AEE4FA320C080D6004B08A4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */; };
+		5AEE4FA420C080D6004B08A4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */; };
+		5AEE4FA620C08164004B08A4 /* ProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */; };
+		5AEE4FA720C08164004B08A4 /* ProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */; };
 		A23DFA2220BE34F3004C8146 /* ListingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A23DFA2120BE34F3004C8146 /* ListingView.xib */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +100,8 @@
 		5A58B93920BA617D00890320 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		5A58B93D20BB0CFB00890320 /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 		5A58B93F20BB46ED00890320 /* XCTestCaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCaseExtensions.swift; sourceTree = "<group>"; };
+		5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailView.xib; sourceTree = "<group>"; };
 		5E149B2F2E1424EB75DD20DB /* Pods-CoolBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlue/Pods-CoolBlue.debug.xcconfig"; sourceTree = "<group>"; };
 		7B79C795160DF17CEE0C942C /* Pods-CoolBlueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlueTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlueTests/Pods-CoolBlueTests.release.xcconfig"; sourceTree = "<group>"; };
 		A23DFA2120BE34F3004C8146 /* ListingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListingView.xib; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 		5A58B91620BA32C200890320 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5AEE4FA020C0805A004B08A4 /* ProductDetail */,
 				5A58B91720BA32CD00890320 /* Listing */,
 			);
 			path = Modules;
@@ -374,6 +381,23 @@
 				5A58B93920BA617D00890320 /* ApiClient.swift */,
 			);
 			path = ApiClient;
+			sourceTree = "<group>";
+		};
+		5AEE4FA020C0805A004B08A4 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5AEE4FA120C080BF004B08A4 /* View */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		5AEE4FA120C080BF004B08A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */,
+				5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		8E9147ABBA9EDB42D7CB9D2F /* Frameworks */ = {
@@ -512,6 +536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A23DFA2220BE34F3004C8146 /* ListingView.xib in Resources */,
+				5AEE4FA620C08164004B08A4 /* ProductDetailView.xib in Resources */,
 				5A2AA48520BF9A9D00E16282 /* ProductCell.xib in Resources */,
 				5A58B8F320BA2F0500890320 /* LaunchScreen.storyboard in Resources */,
 				5A58B8F020BA2F0500890320 /* Assets.xcassets in Resources */,
@@ -522,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AEE4FA720C08164004B08A4 /* ProductDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +656,7 @@
 				5A58B92920BA378200890320 /* ListingWireframe.swift in Sources */,
 				5A27579920BBB87200A7DB8F /* Product.swift in Sources */,
 				5A2AA48920BFA32700E16282 /* Extensions.swift in Sources */,
+				5AEE4FA320C080D6004B08A4 /* ProductDetailView.swift in Sources */,
 				5A58B91F20BA34F800890320 /* ListingView.swift in Sources */,
 				5A58B92220BA35FD00890320 /* ListingInteractor.swift in Sources */,
 			);
@@ -644,6 +671,7 @@
 				5A58B94020BB46ED00890320 /* XCTestCaseExtensions.swift in Sources */,
 				5A58B93620BA5D4A00890320 /* ListingConfiguratorTests.swift in Sources */,
 				5A58B93020BA3A2E00890320 /* ListingProtocols.swift in Sources */,
+				5AEE4FA420C080D6004B08A4 /* ProductDetailView.swift in Sources */,
 				5A58B92320BA35FD00890320 /* ListingInteractor.swift in Sources */,
 				5A58B93E20BB0CFB00890320 /* ApiClientTests.swift in Sources */,
 				5A2AA48A20BFA32700E16282 /* Extensions.swift in Sources */,
@@ -818,7 +846,10 @@
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -835,7 +866,10 @@
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -852,7 +886,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -870,7 +908,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -887,7 +929,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -904,7 +950,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

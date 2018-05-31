@@ -19,6 +19,7 @@ class ListingConfigurator {
     // MARK: Configuration
     
     static func configure(viewController: ListingView) {
+        wireframe.navigationController = viewController.navigationController
         presenter.interactor = interactor
         presenter.wireframe = wireframe
         interactor.delegate = presenter

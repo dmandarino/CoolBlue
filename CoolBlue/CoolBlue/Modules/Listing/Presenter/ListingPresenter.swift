@@ -28,6 +28,10 @@ extension ListingPresenter: ListingPresenterProtocol {
     func updateView() {
         interactor?.fetchProducts()
     }
+    
+    func didSelectedProduct(productId: Int) {
+        wireframe?.navigateToProductDetail(forProductId: productId)
+    }
 }
 
 //MARk: - ListingInteractorOutputProtocol

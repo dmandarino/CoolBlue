@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class ListingWireframe: ListingWireframeProtocol {
     
+    var navigationController: UINavigationController?
+    
+    func navigateToProductDetail(forProductId productId: Int) {
+        let productDetailVC = ProductDetailView()
+        self.navigationController?.pushViewController(productDetailVC, animated: true)
+    }
 }

@@ -25,10 +25,10 @@ class ListingView: UIViewController {
     
     convenience init() {
         self.init(nibName: "ListingView", bundle: nil)
-        ListingConfigurator.configure(viewController: self)
     }
     
     override func viewDidLoad() {
+        ListingConfigurator.configure(viewController: self)
         setupView()
     }
     
@@ -42,6 +42,7 @@ class ListingView: UIViewController {
 //MARk: - UICollectionView
 
 extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if productList.isEmpty {
             return 10
@@ -65,6 +66,18 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         return cellConfigured(cell: cell, forIndex: indexPath.row)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productId: Int
+        
+        if isFiltering() {
+            productId = filteredProducList[indexPath.row].productId
+        } else {
+            productId = productList[indexPath.row].productId
+        }
+        
+        presenter?.didSelectedProduct(productId: productId)
+    }
+    
     private func cellConfigured(cell: ProductCell, forIndex index: Int) -> ProductCell {
         var collection: [Product] = []
         
@@ -79,7 +92,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.productImage.af_setImage(
             withURL: URL(string: collection[index].productImage)!,
             placeholderImage: UIImage(named: "placeholder"),
-            imageTransition: .crossDissolve(0.5)
+            imageTransition: .crossDissolve(0.2)
         )
         
         return cell
@@ -136,11 +149,7 @@ extension ListingView: ListingPresenterOutputProtocol {
 
 //MARK: - SkeletonTableViewDataSource
 
-extension ListingView: SkeletonCollectionViewDataSource {
-    
-    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return reuseIdentifier
-    }
+extension ListingView {
     
     private func setSkeletonableLabels(labels: [UILabel]) {
         for label in labels {

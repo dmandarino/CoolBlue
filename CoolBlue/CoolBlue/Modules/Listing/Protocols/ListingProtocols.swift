@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ListingViewProtocol {
     var presenter: ListingPresenterProtocol? {get}
@@ -20,6 +21,7 @@ protocol ListingPresenterProtocol {
     var wireframe: ListingWireframeProtocol? {get}
     
     func updateView()
+    func didSelectedProduct(productId: Int)
 }
 
 protocol ListingPresenterOutputProtocol: class {
@@ -39,5 +41,5 @@ protocol ListingInteractorProtocol {
 }
 
 protocol ListingWireframeProtocol {
-    
+    func navigateToProductDetail(forProductId productId: Int)
 }
