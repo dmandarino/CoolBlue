@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product: Codable {
+struct Product {
     var productId: Int
     var productName: String
 //    var reviewInformation: Review

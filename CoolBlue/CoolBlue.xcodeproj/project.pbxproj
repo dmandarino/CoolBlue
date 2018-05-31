@@ -261,11 +261,12 @@
 		5A58B91720BA32CD00890320 /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				5A58B91D20BA337C00890320 /* Configurator */,
 				5A58B91820BA32F300890320 /* View */,
 				5A58B91A20BA332A00890320 /* Interactor */,
 				5A58B91920BA330900890320 /* Presenter */,
 				5A58B91C20BA335D00890320 /* Wireframe */,
-				5A58B91D20BA337C00890320 /* Configurator */,
+				5A27579B20BBC02200A7DB8F /* Worker */,
 				5A58B92420BA362000890320 /* Protocols */,
 			);
 			path = Listing;
@@ -292,7 +293,6 @@
 		5A58B91A20BA332A00890320 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				5A27579B20BBC02200A7DB8F /* Worker */,
 				5A58B92120BA35FD00890320 /* ListingInteractor.swift */,
 			);
 			path = Interactor;
@@ -816,7 +816,10 @@
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -833,7 +836,10 @@
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -850,7 +856,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -868,7 +878,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -885,7 +899,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -902,7 +920,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N3GG8VLR9P;
 				INFOPLIST_FILE = CoolBlueUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mandarino.douglas.CoolBlueUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -55,9 +55,9 @@ extension ListingView: ListingPresenterOutputProtocol {
         self.productList = productList
         updateProductList()
         
-        ApiClient.sharedInstance.fetchImage(forURLString: "https://image.coolblue.nl/300x750/products/984093", completion: { image in
-            self.imageList.append(image)
-        })
+//        ApiClient.sharedInstance.fetchImage(forURLString: "https://image.coolblue.nl/300x750/products/984093", completion: { image in
+//            self.imageList.append(image)
+//        })
         
 //        for product in productList {
 //            let imagePath = product.productImage
@@ -91,12 +91,14 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         guard productList != nil else {
             return cell
         }
+        let url = URL(string: productList![indexPath.item].productImage)!
         cell.productName.text = productList?[indexPath.item].productName
         cell.productPrice.text = productList![indexPath.item].salesPriceIncVat.currency
-        
-        if !imageList.isEmpty {
-            cell.productImage.image = imageList[0]
-        }
+        cell.productImage.af_setImage(
+            withURL: url,
+            placeholderImage: UIImage(named: "placeholder"),
+            imageTransition: .crossDissolve(0.5)
+        )
         
         return cell
     }

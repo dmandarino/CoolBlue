@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-import AlamofireImage
 
 
 class ApiClient {
@@ -15,7 +14,6 @@ class ApiClient {
     static let sharedInstance = ApiClient()
     
     private let hostiOSAssignmentURL = "https://bdk0sta2n0.execute-api.eu-west-1.amazonaws.com/ios-assignment"
-    private let hostImageURL = "https://image.coolblue.nl"
     
     private init() {}
     
@@ -32,20 +30,6 @@ class ApiClient {
                 return
             }
             completion(value)
-        }
-    }
-    
-    func fetchImage(forURLString: String, completion: @escaping (UIImage) -> ()) {
-        Alamofire.request(forURLString).responseImage { response in
-            debugPrint(response)
-            
-            print(response.request)
-            print(response.response)
-            debugPrint(response.result)
-            
-            if let image = response.result.value {
-                completion(image)
-            }
         }
     }
 }
