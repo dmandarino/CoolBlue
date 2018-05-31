@@ -14,7 +14,9 @@ import UIKit
 class ListingView: UIViewController {
 
     var presenter: ListingPresenterProtocol?
-    private var productList: [Product]?
+    private var productList: [Product] = []
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -29,6 +31,7 @@ class ListingView: UIViewController {
     
     private func setupView() {
         setupCollectionView()
+        setupSearchController()
         updateView()
     }
 }
@@ -67,22 +70,27 @@ extension ListingView: ListingPresenterOutputProtocol {
     }
 }
 
+//MARk: - UICollectionView
+
 extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        guard !productList.isEmpty else {
+            return 10
+        }
+        return productList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ProductCell
         
-        guard productList != nil else {
+        guard !productList.isEmpty else {
             return cell
         }
         
-        let url = URL(string: productList![indexPath.item].productImage)!
-        cell.productName.text = productList?[indexPath.item].productName
-        cell.productPrice.text = productList![indexPath.item].salesPriceIncVat.currency
+        let url = URL(string: productList[indexPath.item].productImage)!
+        cell.productName.text = productList[indexPath.item].productName
+        cell.productPrice.text = productList[indexPath.item].salesPriceIncVat.currency
         cell.productImage.af_setImage(
             withURL: url,
             placeholderImage: UIImage(named: "placeholder"),
@@ -100,5 +108,21 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         self.collectionView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+    }
+}
+
+//MARk: - UISearchResultsUpdating
+
+extension ListingView: UISearchResultsUpdating {
+    
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "What are you looking for?"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
     }
 }

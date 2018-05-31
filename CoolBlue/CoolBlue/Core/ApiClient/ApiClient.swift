@@ -7,7 +7,7 @@
 //
 
 import Alamofire
-
+import AlamofireImage
 
 class ApiClient {
     
