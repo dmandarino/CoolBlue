@@ -15,10 +15,10 @@ class ProductDetailViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        sut = ProductDetailView()
+        sut = ProductDetailView(productId: 1)
     }
     
-    func testUpdaeViewToBePresented() {
+    func testUpdateViewToBePresented() {
         let expectation = expected(description: "Should call updateView in presenter")
         let presenter = ProductDetailPresenterMock(expectation: expectation)
         sut.presenter = presenter

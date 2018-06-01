@@ -29,8 +29,9 @@ class ProductDetailInteractorTests: XCTestCase {
     func testCallProductFetched() {
         let expectation = expected(description: "Should call product fetched")
         let delegate = DelegateMock(expectation: expectation)
+        let product = Product(productId: 1, productName: "Name", salesPriceIncVat: 123, productImage: "")
         sut.delegate = delegate
-        sut.didFetchWithSuccess(productList: [])
+        sut.didFetchWithSuccess(productList: [product])
         waitForExpectations()
     }
     
@@ -73,7 +74,7 @@ private class DelegateMock: ProductDetailInteractorOutputProtocol {
     }
     
     func productFetched(product: Product) {
-        if expected.expectationDescription == "Should call product fetched failed" {
+        if expected.expectationDescription == "Should call product fetched" {
             expected.fulfill()
         }
     }

@@ -43,7 +43,10 @@ class ProductDetailView: UIViewController {
 extension ProductDetailView: ProductDetailViewProtocol {
     
     func updateView() {
-    
+        guard productId != nil else {
+            return
+        }
+        presenter?.updateView(byProductId: productId!)
     }
 }
 
@@ -52,7 +55,10 @@ extension ProductDetailView: ProductDetailViewProtocol {
 extension ProductDetailView: ProductDetailPresenterOutputProtocol {
     
     func showError() {
-        
+        let alertError = UIAlertController.getAlertError(callback: {
+            self.updateView()
+        })
+        self.present(alertError, animated: true, completion: nil)
     }
     
     func showProduct(product: Product) {

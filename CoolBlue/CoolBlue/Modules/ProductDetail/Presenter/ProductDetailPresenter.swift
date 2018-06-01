@@ -26,7 +26,7 @@ class ProductDetailPresenter {
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
 
     func updateView(byProductId productId: Int) {
-
+        interactor?.fetchProduct(byProductId: productId)
     }
 }
 
@@ -35,10 +35,10 @@ extension ProductDetailPresenter: ProductDetailPresenterProtocol {
 extension ProductDetailPresenter: ProductDetailInteractorOutputProtocol {
     
     func productFetched(product: Product) {
-    
+        delegate?.showProduct(product: product)
     }
     
     func productFetchedFailed() {
-    
+        delegate?.showError()
     }
 }

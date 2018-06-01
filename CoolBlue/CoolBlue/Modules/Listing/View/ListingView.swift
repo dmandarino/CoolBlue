@@ -136,7 +136,10 @@ extension ListingView: ListingPresenterOutputProtocol {
     }
     
     func showError() {
-        presentErrorAlertController()
+        let alertError = UIAlertController.getAlertError(callback: {
+            self.updateView()
+        })
+        self.present(alertError, animated: true, completion: nil)
     }
     
     private func presentErrorAlertController() {

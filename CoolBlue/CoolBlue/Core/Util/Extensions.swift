@@ -23,3 +23,18 @@ extension UIColor {
         static let blue = UIColor(red: 61/255, green: 143/255, blue: 221/255, alpha: 1)
     }
 }
+
+extension UIAlertController {
+    
+    static func getAlertError(callback: @escaping () -> ()) -> UIAlertController {
+        let alertController = UIAlertController(title: "Oops", message: "Something went wrong. Do you want to try again?", preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Try Again", style: .default) { (action:UIAlertAction) in
+            callback()
+        }
+        let dissmissAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(tryAgainAction)
+        alertController.addAction(dissmissAction)
+        
+        return alertController
+    }
+}
