@@ -20,7 +20,7 @@ protocol ProductDetailPresenterProtocol {
     var delegate: ProductDetailPresenterOutputProtocol? {get}
     var wireframe: ProductDetailWireframeProtocol? {get}
     
-    func updateView()
+    func updateView(byProductId productId: Int)
 }
 
 protocol ProductDetailPresenterOutputProtocol: class {
@@ -36,7 +36,7 @@ protocol ProductDetailInteractorOutputProtocol: class {
 protocol ProductDetailInteractorProtocol {
     var delegate: ProductDetailInteractorOutputProtocol? {get}
     
-    func fetchProduct()
+    func fetchProduct(byProductId productId: Int)
 }
 
 protocol ProductDetailWireframeProtocol {

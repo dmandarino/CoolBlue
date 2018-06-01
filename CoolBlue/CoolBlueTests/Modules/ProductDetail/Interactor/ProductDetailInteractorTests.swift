@@ -1,29 +1,28 @@
 //
-//  ListingInteractorTests.swift
+//  ProductDetailInteractorTests.swift
 //  CoolBlueTests
 //
-//  Created by Douglas Mandarino on 28/05/18.
+//  Created by Douglas Mandarino on 01/06/18.
 //  Copyright © 2018 Douglas Mandarino. All rights reserved.
 //
-
 
 import XCTest
 @testable import CoolBlue
 
-class ListingInteractorTests: XCTestCase {
+class ProductDetailInteractorTests: XCTestCase {
     
-    var sut: ListingInteractor!
+    var sut: ProductDetailInteractor!
     
     override func setUp() {
         super.setUp()
-                sut = ListingInteractor()
+        sut = ProductDetailInteractor()
     }
     
     func testFetchProductList() {
-        let expectation = expected(description: "Should call fetch products")
+        let expectation = expected(description: "Should call fetch product by Id")
         let worker = FetchProductWorkerMock(expectation: expectation)
-        sut = ListingInteractor(worker: worker)
-        sut.fetchProducts()
+        sut = ProductDetailInteractor(worker: worker)
+        sut.fetchProduct(byProductId: 1)
         waitForExpectations()
     }
     
@@ -44,7 +43,7 @@ class ListingInteractorTests: XCTestCase {
     }
 }
 
-private class FetchProductWorkerMock: FetchProductListWorkerProtocol {
+private class FetchProductWorkerMock: FetchProductWorkerProtocol {
     
     private var expected: XCTestExpectation
     
@@ -58,19 +57,23 @@ private class FetchProductWorkerMock: FetchProductListWorkerProtocol {
         }
     }
     
-    func fetchProduct(byId id: Int) {}
+    func fetchProduct(byId id: Int) {
+        if expected.expectationDescription == "Should call fetch product by Id" {
+            expected.fulfill()
+        }
+    }
 }
 
-private class DelegateMock: ListingInteractorOutputProtocol {
-
+private class DelegateMock: ProductDetailInteractorOutputProtocol {
+    
     private var expected: XCTestExpectation
     
     init(expectation: XCTestExpectation) {
         expected = expectation
     }
     
-    func productFetched(productList: [Product]) {
-        if expected.expectationDescription == "Should call product fetched" {
+    func productFetched(product: Product) {
+        if expected.expectationDescription == "Should call product fetched failed" {
             expected.fulfill()
         }
     }

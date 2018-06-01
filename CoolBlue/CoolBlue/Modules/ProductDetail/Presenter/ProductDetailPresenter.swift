@@ -25,7 +25,7 @@ class ProductDetailPresenter {
 
 extension ProductDetailPresenter: ProductDetailPresenterProtocol {
 
-    func updateView() {
+    func updateView(byProductId productId: Int) {
 
     }
 }

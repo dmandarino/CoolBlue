@@ -13,13 +13,13 @@ import Foundation
 class ListingInteractor {
     
     weak var delegate: ListingInteractorOutputProtocol?
-    private var worker:FetchProductWorkerProtocol?
+    private var worker:FetchProductListWorkerProtocol?
     
     init() {
         self.worker = FetchProductWorker(delegate: self)
     }
     
-    convenience init(worker: FetchProductWorkerProtocol) {
+    convenience init(worker: FetchProductListWorkerProtocol) {
         self.init()
         self.worker = worker
     }

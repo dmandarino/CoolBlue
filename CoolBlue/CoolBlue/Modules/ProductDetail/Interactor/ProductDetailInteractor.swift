@@ -13,14 +13,41 @@ import Foundation
 class ProductDetailInteractor {
     
     var delegate: ProductDetailInteractorOutputProtocol?
+    private var worker:FetchProductWorkerProtocol?
     
+    init() {
+        self.worker = FetchProductWorker(delegate: self)
+    }
+    
+    convenience init(worker: FetchProductWorkerProtocol) {
+        self.init()
+        self.worker = worker
+    }
 }
 
 //MARK: - ProductDetailInteractorProtocol
 
 extension ProductDetailInteractor: ProductDetailInteractorProtocol {
     
-    func fetchProduct() {
-        
+    func fetchProduct(byProductId productId: Int) {
+        worker?.fetchProduct(byId: productId)
     }
 }
+
+//MARK: - FetchProductListWorkerOutputProtocol
+
+extension ProductDetailInteractor: FetchProductWorkerOutputProtocol {
+    
+    func didFetchWithSuccess(productList: [Product]) {
+        guard let product = productList.first else {
+            didFetchWithFailure()
+            return
+        }
+        delegate?.productFetched(product: product)
+    }
+    
+    func didFetchWithFailure(){
+        delegate?.productFetchedFailed()
+    }
+}
+

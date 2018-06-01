@@ -55,6 +55,9 @@
 		5AD1CE6D20C0F4FD00D35C0C /* ProductDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE6C20C0F4FD00D35C0C /* ProductDetailConfigurator.swift */; };
 		5AD1CE6E20C0F4FD00D35C0C /* ProductDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE6C20C0F4FD00D35C0C /* ProductDetailConfigurator.swift */; };
 		5AD1CE7320C0F7C000D35C0C /* ProductDetailConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7120C0F7C000D35C0C /* ProductDetailConfiguratorTests.swift */; };
+		5AD1CE7620C0F96D00D35C0C /* ProductDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7520C0F96D00D35C0C /* ProductDetailViewTests.swift */; };
+		5AD1CE7920C0FBD000D35C0C /* ProductDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7820C0FBD000D35C0C /* ProductDetailPresenterTests.swift */; };
+		5AD1CE7C20C0FD3600D35C0C /* ProductDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7B20C0FD3600D35C0C /* ProductDetailInteractorTests.swift */; };
 		5AEE4FA320C080D6004B08A4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */; };
 		5AEE4FA420C080D6004B08A4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */; };
 		5AEE4FA620C08164004B08A4 /* ProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */; };
@@ -117,6 +120,9 @@
 		5AD1CE6820C0F43700D35C0C /* ProductDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailWireframe.swift; sourceTree = "<group>"; };
 		5AD1CE6C20C0F4FD00D35C0C /* ProductDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailConfigurator.swift; sourceTree = "<group>"; };
 		5AD1CE7120C0F7C000D35C0C /* ProductDetailConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailConfiguratorTests.swift; sourceTree = "<group>"; };
+		5AD1CE7520C0F96D00D35C0C /* ProductDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewTests.swift; sourceTree = "<group>"; };
+		5AD1CE7820C0FBD000D35C0C /* ProductDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenterTests.swift; sourceTree = "<group>"; };
+		5AD1CE7B20C0FD3600D35C0C /* ProductDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInteractorTests.swift; sourceTree = "<group>"; };
 		5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailView.xib; sourceTree = "<group>"; };
 		5E149B2F2E1424EB75DD20DB /* Pods-CoolBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlue/Pods-CoolBlue.debug.xcconfig"; sourceTree = "<group>"; };
@@ -189,7 +195,6 @@
 		5A27579F20BBEA9700A7DB8F /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				5A2757A020BBEAB400A7DB8F /* Worker */,
 				5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */,
 			);
 			path = Interactor;
@@ -290,7 +295,6 @@
 				5A58B91A20BA332A00890320 /* Interactor */,
 				5A58B91920BA330900890320 /* Presenter */,
 				5A58B91C20BA335D00890320 /* Wireframe */,
-				5A27579B20BBC02200A7DB8F /* Worker */,
 				5A58B92420BA362000890320 /* Protocols */,
 			);
 			path = Listing;
@@ -359,8 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				5A40229320BCF1A20015C0E7 /* View */,
-				5A40228D20BCE8FB0015C0E7 /* Presenter */,
 				5A27579F20BBEA9700A7DB8F /* Interactor */,
+				5A40228D20BCE8FB0015C0E7 /* Presenter */,
 				5A58B93320BA5D1A00890320 /* Configurator */,
 			);
 			path = Listing;
@@ -380,6 +384,7 @@
 				A23DFA2320BE39DD004C8146 /* Util */,
 				5A27579720BBB85300A7DB8F /* Product */,
 				5A8C414520BBAA3E00AC2376 /* ApiClient */,
+				5A27579B20BBC02200A7DB8F /* Worker */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 		5A58B93C20BB0CE500890320 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5A2757A020BBEAB400A7DB8F /* Worker */,
 				5A58B93D20BB0CFB00890320 /* ApiClientTests.swift */,
 				5A58B93F20BB46ED00890320 /* XCTestCaseExtensions.swift */,
 			);
@@ -444,6 +450,9 @@
 		5AD1CE6F20C0F79900D35C0C /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				5AD1CE7420C0F94F00D35C0C /* View */,
+				5AD1CE7A20C0FD1600D35C0C /* Interactor */,
+				5AD1CE7720C0FBA100D35C0C /* Presenter */,
 				5AD1CE7020C0F7A400D35C0C /* Configurator */,
 			);
 			path = ProductDetail;
@@ -455,6 +464,30 @@
 				5AD1CE7120C0F7C000D35C0C /* ProductDetailConfiguratorTests.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5AD1CE7420C0F94F00D35C0C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5AD1CE7520C0F96D00D35C0C /* ProductDetailViewTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5AD1CE7720C0FBA100D35C0C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5AD1CE7820C0FBD000D35C0C /* ProductDetailPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5AD1CE7A20C0FD1600D35C0C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				5AD1CE7B20C0FD3600D35C0C /* ProductDetailInteractorTests.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		5AEE4FA020C0805A004B08A4 /* ProductDetail */ = {
@@ -751,7 +784,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A2757A320BBEAC700A7DB8F /* FetchProductListWorkerTests.swift in Sources */,
+				5AD1CE7620C0F96D00D35C0C /* ProductDetailViewTests.swift in Sources */,
 				5A27579E20BBC03A00A7DB8F /* FetchProductWorker.swift in Sources */,
+				5AD1CE7C20C0FD3600D35C0C /* ProductDetailInteractorTests.swift in Sources */,
 				5A58B94020BB46ED00890320 /* XCTestCaseExtensions.swift in Sources */,
 				5A58B93620BA5D4A00890320 /* ListingConfiguratorTests.swift in Sources */,
 				5AD1CE5E20C0ED2A00D35C0C /* ProductDetailProtocol.swift in Sources */,
@@ -771,6 +806,7 @@
 				5A2AA48720BF9AC200E16282 /* ProductCell.swift in Sources */,
 				5A40229220BCE9700015C0E7 /* ListingInteractorTests.swift in Sources */,
 				5AD1CE6A20C0F43700D35C0C /* ProductDetailWireframe.swift in Sources */,
+				5AD1CE7920C0FBD000D35C0C /* ProductDetailPresenterTests.swift in Sources */,
 				5A40228F20BCE9550015C0E7 /* ListingPresenterTests.swift in Sources */,
 				5A58B92720BA364C00890320 /* ListingPresenter.swift in Sources */,
 				5AD1CE6220C0F1F100D35C0C /* ProductDetailPresenter.swift in Sources */,
