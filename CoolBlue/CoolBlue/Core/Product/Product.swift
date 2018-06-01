@@ -9,12 +9,11 @@
 import Foundation
 
 struct Product {
-    var productId: Int
-    var productName: String
-//    var reviewInformation: Review
-//    var usp: [String]
+    var id: Int
+    var name: String
     var salesPriceIncVat: Int
-    var productImages: [String]
+    var images: [String]
+    var description: String
 }
 
 struct Review {

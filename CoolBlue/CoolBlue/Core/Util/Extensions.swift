@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+//MARK: - Int
+
 extension Int {
     var currency: String {
         let formatter = NumberFormatter()
@@ -18,11 +20,15 @@ extension Int {
     }
 }
 
+//MARK: - UIColor
+
 extension UIColor {
     struct AppColor {
         static let blue = UIColor(red: 61/255, green: 143/255, blue: 221/255, alpha: 1)
     }
 }
+
+//MARK: - UIAlertController
 
 extension UIAlertController {
     
@@ -36,5 +42,13 @@ extension UIAlertController {
         alertController.addAction(dissmissAction)
         
         return alertController
+    }
+}
+
+//MARK: - String
+
+extension String {
+    var withoutHtmlTags: String {
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 }

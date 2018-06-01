@@ -79,10 +79,10 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
             collection = productList
         }
         
-        cell.productName.text = collection[index].productName
+        cell.productName.text = collection[index].name
         cell.productPrice.text = collection[index].salesPriceIncVat.currency
         cell.productImage.af_setImage(
-            withURL: URL(string: collection[index].productImages.first!)!,
+            withURL: URL(string: collection[index].images.first!)!,
             placeholderImage: UIImage(named: "placeholder"),
             imageTransition: .crossDissolve(0.2)
         )
@@ -119,9 +119,9 @@ extension ListingView: ListingViewProtocol {
         }
         
         if isFiltering() {
-            presenter?.didSelectedProduct(productId: filteredProducList[indexPath.row].productId)
+            presenter?.didSelectedProduct(productId: filteredProducList[indexPath.row].id)
         } else {
-            presenter?.didSelectedProduct(productId: productList[indexPath.row].productId)
+            presenter?.didSelectedProduct(productId: productList[indexPath.row].id)
         }
     }
 }
@@ -201,7 +201,7 @@ extension ListingView: UISearchResultsUpdating {
     
     private func filterProductList(_ searchText: String) {
         filteredProducList = productList.filter({( product : Product) -> Bool in
-            return product.productName.lowercased().contains(searchText.lowercased())
+            return product.name.lowercased().contains(searchText.lowercased())
         })
         updateCollectionView()
     }

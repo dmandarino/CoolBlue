@@ -71,10 +71,11 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
             }
             
             let product = Product(
-                productId: productId,
-                productName: productName,
+                id: productId,
+                name: productName,
                 salesPriceIncVat: salesPriceIncVat,
-                productImages: [productImage]
+                images: [productImage],
+                description: ""
             )
             
             productList.append(product)
@@ -114,7 +115,8 @@ extension FetchProductWorker: FetchProductWorkerProtocol {
         var productImages: [String] = []
         guard let productId = json["productId"].int,
         let productName = json["productName"].string,
-        let salesPriceIncVat = json["salesPriceIncVat"].int else {
+        let salesPriceIncVat = json["salesPriceIncVat"].int,
+        let description = json["productText"].string else {
             return productList
         }
         
@@ -125,10 +127,11 @@ extension FetchProductWorker: FetchProductWorkerProtocol {
         }
         
         let product = Product(
-            productId: productId,
-            productName: productName,
+            id: productId,
+            name: productName,
             salesPriceIncVat: salesPriceIncVat,
-            productImages: productImages
+            images: productImages,
+            description: description
         )
             
         productList.append(product)

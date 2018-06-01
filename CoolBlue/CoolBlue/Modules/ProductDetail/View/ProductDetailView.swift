@@ -63,10 +63,11 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
     }
     
     func showProduct(product: Product) {
-        self.productName.text = product.productName
+        self.productName.text = product.name
         self.productPrice.text = product.salesPriceIncVat.currency
+        self.productDescription.text = product.description.withoutHtmlTags
         self.productImage.af_setImage(
-            withURL: URL(string: product.productImages.first!)!,
+            withURL: URL(string: product.images.first!)!,
             placeholderImage: UIImage(named: "placeholder"),
             imageTransition: .crossDissolve(0.2)
         )
@@ -76,5 +77,6 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
     private func hideSkeleton() {
         self.productName.hideSkeleton()
         self.productPrice.hideSkeleton()
+        self.productDescription.hideSkeleton()
     }
 }
