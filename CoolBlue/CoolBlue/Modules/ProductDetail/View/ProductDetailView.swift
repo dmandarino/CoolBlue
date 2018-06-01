@@ -65,6 +65,11 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
     func showProduct(product: Product) {
         self.productName.text = product.productName
         self.productPrice.text = product.salesPriceIncVat.currency
+        self.productImage.af_setImage(
+            withURL: URL(string: product.productImages.first!)!,
+            placeholderImage: UIImage(named: "placeholder"),
+            imageTransition: .crossDissolve(0.2)
+        )
         hideSkeleton()
     }
     
