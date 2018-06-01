@@ -58,6 +58,8 @@
 		5AD1CE7620C0F96D00D35C0C /* ProductDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7520C0F96D00D35C0C /* ProductDetailViewTests.swift */; };
 		5AD1CE7920C0FBD000D35C0C /* ProductDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7820C0FBD000D35C0C /* ProductDetailPresenterTests.swift */; };
 		5AD1CE7C20C0FD3600D35C0C /* ProductDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7B20C0FD3600D35C0C /* ProductDetailInteractorTests.swift */; };
+		5AD1CE7E20C1266300D35C0C /* FetchProductWorkerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7D20C1266300D35C0C /* FetchProductWorkerProtocols.swift */; };
+		5AD1CE7F20C1266300D35C0C /* FetchProductWorkerProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD1CE7D20C1266300D35C0C /* FetchProductWorkerProtocols.swift */; };
 		5AEE4FA320C080D6004B08A4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */; };
 		5AEE4FA420C080D6004B08A4 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */; };
 		5AEE4FA620C08164004B08A4 /* ProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */; };
@@ -123,6 +125,7 @@
 		5AD1CE7520C0F96D00D35C0C /* ProductDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewTests.swift; sourceTree = "<group>"; };
 		5AD1CE7820C0FBD000D35C0C /* ProductDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenterTests.swift; sourceTree = "<group>"; };
 		5AD1CE7B20C0FD3600D35C0C /* ProductDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailInteractorTests.swift; sourceTree = "<group>"; };
+		5AD1CE7D20C1266300D35C0C /* FetchProductWorkerProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductWorkerProtocols.swift; sourceTree = "<group>"; };
 		5AEE4FA220C080D6004B08A4 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		5AEE4FA520C08164004B08A4 /* ProductDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailView.xib; sourceTree = "<group>"; };
 		5E149B2F2E1424EB75DD20DB /* Pods-CoolBlue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolBlue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolBlue/Pods-CoolBlue.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				5A27579C20BBC03A00A7DB8F /* FetchProductWorker.swift */,
+				5AD1CE7D20C1266300D35C0C /* FetchProductWorkerProtocols.swift */,
 			);
 			path = Worker;
 			sourceTree = "<group>";
@@ -759,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A58B92F20BA3A2E00890320 /* ListingProtocols.swift in Sources */,
+				5AD1CE7E20C1266300D35C0C /* FetchProductWorkerProtocols.swift in Sources */,
 				5A58B93A20BA617D00890320 /* ApiClient.swift in Sources */,
 				5A58B8E920BA2F0400890320 /* AppDelegate.swift in Sources */,
 				5A2AA48620BF9A9D00E16282 /* ProductCell.swift in Sources */,
@@ -797,6 +802,7 @@
 				5AD1CE6E20C0F4FD00D35C0C /* ProductDetailConfigurator.swift in Sources */,
 				5A58B93E20BB0CFB00890320 /* ApiClientTests.swift in Sources */,
 				5A2AA48A20BFA32700E16282 /* Extensions.swift in Sources */,
+				5AD1CE7F20C1266300D35C0C /* FetchProductWorkerProtocols.swift in Sources */,
 				5A27579A20BBB87200A7DB8F /* Product.swift in Sources */,
 				5A58B93B20BA617D00890320 /* ApiClient.swift in Sources */,
 				5AD1CE7320C0F7C000D35C0C /* ProductDetailConfiguratorTests.swift in Sources */,

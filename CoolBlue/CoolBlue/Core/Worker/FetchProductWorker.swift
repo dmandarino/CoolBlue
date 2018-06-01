@@ -10,19 +10,6 @@ import Foundation
 import SwiftyJSON
 
 
-protocol FetchProductListWorkerProtocol {
-    func fetchProductList()
-}
-
-protocol FetchProductWorkerProtocol {
-    func fetchProduct(byId id: Int)
-}
-
-protocol FetchProductWorkerOutputProtocol: class {
-    func didFetchWithSuccess(productList: [Product])
-    func didFetchWithFailure()
-}
-
 //MARK: - FetchProductWorker
 
 class FetchProductWorker {
