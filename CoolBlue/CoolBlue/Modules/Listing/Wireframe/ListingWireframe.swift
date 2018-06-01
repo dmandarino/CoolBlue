@@ -15,6 +15,7 @@ class ListingWireframe: ListingWireframeProtocol {
     
     func navigateToProductDetail(forProductId productId: Int) {
         let productDetailVC = ProductDetailView(productId: productId)
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 }
