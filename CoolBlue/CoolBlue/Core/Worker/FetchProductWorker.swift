@@ -41,28 +41,6 @@ class FetchProductWorker {
         self.endpoint = endpoint
     }
     
-    private func parseProduct(json: JSON) -> [Product] {
-        var productList: [Product] = []
-        for (_, value) in json {
-            guard let productId = value["productId"].int,
-            let productName = value["productName"].string,
-            let salesPriceIncVat = value["salesPriceIncVat"].int,
-            let productImage = value["productImage"].string else {
-                return productList
-            }
-            
-            let product = Product(
-                productId: productId,
-                productName: productName,
-                salesPriceIncVat: salesPriceIncVat,
-                productImage: productImage
-            )
-            
-            productList.append(product)
-        }
-        return productList
-    }
-    
     private func hasNotDefaultEndpoint() -> Bool {
         return self.endpoint == ""
     }
@@ -83,7 +61,7 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
             if response != nil {
                 let json = JSON(response!)
                 let objects = json["products"]
-                self.productList = self.parseProduct(json: objects)
+                self.productList = self.parseProductList(json: objects)
                 if self.productList != nil && !(self.productList?.isEmpty)! {
                     self.delegate?.didFetchWithSuccess(productList: self.productList!)
                 } else {
@@ -94,6 +72,28 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
             }
         })
     }
+    
+    private func parseProductList(json: JSON) -> [Product] {
+        var productList: [Product] = []
+        for (_, value) in json {
+            guard let productId = value["productId"].int,
+                let productName = value["productName"].string,
+                let salesPriceIncVat = value["salesPriceIncVat"].int,
+                let productImage = value["productImage"].string else {
+                    return productList
+            }
+            
+            let product = Product(
+                productId: productId,
+                productName: productName,
+                salesPriceIncVat: salesPriceIncVat,
+                productImage: productImage
+            )
+            
+            productList.append(product)
+        }
+        return productList
+    }
 }
 
 //MARK: - FetchProductWorkerProtocol
@@ -101,6 +101,43 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
 extension FetchProductWorker: FetchProductWorkerProtocol {
     
     func fetchProduct(byId id: Int) {
-        
+        if hasNotDefaultEndpoint() {
+            self.endpoint = "/product/"
+        }
+        let requestUrl = endpoint+"\(id)"
+        ApiClient.sharedInstance.fetch(endpoint: requestUrl,
+           completion: { response in
+            if response != nil {
+                let json = JSON(response!)
+                let object = json["product"]
+                self.productList = self.parseProduct(json: object)
+                if self.productList != nil && !(self.productList?.isEmpty)! {
+                    self.delegate?.didFetchWithSuccess(productList: self.productList!)
+                } else {
+                    self.delegate?.didFetchWithFailure()
+                }
+            } else {
+                self.delegate?.didFetchWithFailure()
+            }
+        })
+    }
+    
+    private func parseProduct(json: JSON) -> [Product] {
+        var productList: [Product] = []
+        guard let productId = json["productId"].int,
+        let productName = json["productName"].string,
+        let salesPriceIncVat = json["salesPriceIncVat"].int else {
+            return productList
+        }
+            
+        let product = Product(
+            productId: productId,
+            productName: productName,
+            salesPriceIncVat: salesPriceIncVat,
+            productImage: ""
+        )
+            
+        productList.append(product)
+        return productList
     }
 }

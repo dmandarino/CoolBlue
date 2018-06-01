@@ -35,6 +35,7 @@ class ProductDetailView: UIViewController {
         productName.showAnimatedGradientSkeleton()
         productPrice.showAnimatedGradientSkeleton()
         productDescription.showAnimatedGradientSkeleton()
+        updateView()
     }
 }
 
