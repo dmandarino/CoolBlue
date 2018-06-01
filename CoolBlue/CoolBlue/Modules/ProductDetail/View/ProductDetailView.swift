@@ -62,6 +62,13 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
     }
     
     func showProduct(product: Product) {
-        
+        self.productName.text = product.productName
+        self.productPrice.text = product.salesPriceIncVat.currency
+        hideSkeleton()
+    }
+    
+    private func hideSkeleton() {
+        self.productName.hideSkeleton()
+        self.productPrice.hideSkeleton()
     }
 }
