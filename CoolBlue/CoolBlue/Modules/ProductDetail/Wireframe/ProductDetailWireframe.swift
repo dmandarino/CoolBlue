@@ -7,10 +7,11 @@
 //
 
 import Foundation
-
+import UIKit
 
 //MARK: - ProductDetailWireframe
 
 class ProductDetailWireframe: ProductDetailWireframeProtocol {
     
+    var navigationController: UINavigationController?
 }

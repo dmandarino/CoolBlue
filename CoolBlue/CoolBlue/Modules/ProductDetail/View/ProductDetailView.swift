@@ -14,17 +14,20 @@ import UIKit
 class ProductDetailView: UIViewController {
  
     var presenter: ProductDetailPresenterProtocol?
+    private var productId: Int?
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDescription: UITextView!
     
-    convenience init() {
+    convenience init(productId: Int) {
         self.init(nibName: "ProductDetailView", bundle: nil)
+        self.productId = productId
     }
     
     override func viewDidLoad() {
+        ProductDetailConfigurator.configure(viewController: self)
         setupView()
     }
     

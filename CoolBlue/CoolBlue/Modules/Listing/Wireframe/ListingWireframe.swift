@@ -14,7 +14,7 @@ class ListingWireframe: ListingWireframeProtocol {
     var navigationController: UINavigationController?
     
     func navigateToProductDetail(forProductId productId: Int) {
-        let productDetailVC = ProductDetailView()
+        let productDetailVC = ProductDetailView(productId: productId)
         self.navigationController?.pushViewController(productDetailVC, animated: true)
     }
 }

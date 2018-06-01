@@ -41,5 +41,7 @@ protocol ListingInteractorProtocol {
 }
 
 protocol ListingWireframeProtocol {
+    var navigationController: UINavigationController? {get set}
+    
     func navigateToProductDetail(forProductId productId: Int)
 }

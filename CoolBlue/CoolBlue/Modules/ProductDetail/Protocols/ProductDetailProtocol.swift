@@ -40,5 +40,5 @@ protocol ProductDetailInteractorProtocol {
 }
 
 protocol ProductDetailWireframeProtocol {
-    
+    var navigationController: UINavigationController? {get set}
 }
