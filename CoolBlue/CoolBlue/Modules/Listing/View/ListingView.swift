@@ -82,7 +82,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.productName.text = collection[index].productName
         cell.productPrice.text = collection[index].salesPriceIncVat.currency
         cell.productImage.af_setImage(
-            withURL: URL(string: collection[index].productImage)!,
+            withURL: URL(string: collection[index].productImages.first!)!,
             placeholderImage: UIImage(named: "placeholder"),
             imageTransition: .crossDissolve(0.2)
         )

@@ -74,7 +74,7 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
                 productId: productId,
                 productName: productName,
                 salesPriceIncVat: salesPriceIncVat,
-                productImage: productImage
+                productImages: [productImage]
             )
             
             productList.append(product)
@@ -111,17 +111,24 @@ extension FetchProductWorker: FetchProductWorkerProtocol {
     
     private func parseProduct(json: JSON) -> [Product] {
         var productList: [Product] = []
+        var productImages: [String] = []
         guard let productId = json["productId"].int,
         let productName = json["productName"].string,
         let salesPriceIncVat = json["salesPriceIncVat"].int else {
             return productList
         }
-            
+        
+        let productImagesJson = json["productImages"].arrayValue
+
+        for image in productImagesJson {
+            productImages.append(image.string!)
+        }
+        
         let product = Product(
             productId: productId,
             productName: productName,
             salesPriceIncVat: salesPriceIncVat,
-            productImage: ""
+            productImages: productImages
         )
             
         productList.append(product)

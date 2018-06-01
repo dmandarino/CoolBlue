@@ -14,7 +14,7 @@ struct Product {
 //    var reviewInformation: Review
 //    var usp: [String]
     var salesPriceIncVat: Int
-    var productImage: String
+    var productImages: [String]
 }
 
 struct Review {
