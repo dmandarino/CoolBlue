@@ -38,7 +38,7 @@ class ProductDetailPresenterTests: XCTestCase {
     func testShowProducts() {
         let expectation = expected(description: "Should call showProduct")
         let delegate = DelegateMock(expectation: expectation)
-        let product = Product(productId: 1, productName: "Name", salesPriceIncVat: 123, productImage: "image")
+        let product = Product(productId: 1, productName: "Name", salesPriceIncVat: 123, productImages: ["image"])
         sut.delegate = delegate
         sut.productFetched(product: product)
         waitForExpectations()
