@@ -141,17 +141,6 @@ extension ListingView: ListingPresenterOutputProtocol {
         })
         self.present(alertError, animated: true, completion: nil)
     }
-    
-    private func presentErrorAlertController() {
-        let alertController = UIAlertController(title: "Oops", message: "Something went wrong. Do you want to try again?", preferredStyle: .alert)
-        let tryAgainAction = UIAlertAction(title: "Try Again", style: .default) { (action:UIAlertAction) in
-            self.updateView()
-        }
-        let dissmissAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(tryAgainAction)
-        alertController.addAction(dissmissAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
 }
 
 //MARK: - SkeletonTableViewDataSource
