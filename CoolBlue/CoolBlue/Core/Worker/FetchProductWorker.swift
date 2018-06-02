@@ -31,6 +31,10 @@ class FetchProductWorker {
     private func hasNotDefaultEndpoint() -> Bool {
         return self.endpoint == ""
     }
+    
+    private func isProductListNotEmpty() -> Bool {
+        return self.productList != nil && !(self.productList?.isEmpty)!
+    }
 }
 
 //MARK: - FetchProductListWorkerProtocol
@@ -44,18 +48,18 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
         }
         let requestUrl = endpoint+"&page=\(pageNumber)"
         ApiClient.sharedInstance.fetch(endpoint: requestUrl,
-           completion: { response in
+           completion: { [weak self] response in
             if response != nil {
                 let json = JSON(response!)
                 let objects = json["products"]
-                self.productList = self.parseProductList(json: objects)
-                if self.productList != nil && !(self.productList?.isEmpty)! {
-                    self.delegate?.didFetchWithSuccess(productList: self.productList!)
+                self?.productList = self?.parseProductList(json: objects)
+                if (self?.isProductListNotEmpty())! {
+                    self?.delegate?.didFetchWithSuccess(productList: (self?.productList!)!)
                 } else {
-                    self.delegate?.didFetchWithFailure()
+                    self?.delegate?.didFetchWithFailure()
                 }
             } else {
-                self.delegate?.didFetchWithFailure()
+                self?.delegate?.didFetchWithFailure()
             }
         })
     }
@@ -94,18 +98,18 @@ extension FetchProductWorker: FetchProductWorkerProtocol {
         }
         let requestUrl = endpoint+"\(id)"
         ApiClient.sharedInstance.fetch(endpoint: requestUrl,
-           completion: { response in
+           completion: { [weak self] response in
             if response != nil {
                 let json = JSON(response!)
                 let object = json["product"]
-                self.productList = self.parseProduct(json: object)
-                if self.productList != nil && !(self.productList?.isEmpty)! {
-                    self.delegate?.didFetchWithSuccess(productList: self.productList!)
+                self?.productList = self?.parseProduct(json: object)
+                if (self?.isProductListNotEmpty())! {
+                    self?.delegate?.didFetchWithSuccess(productList: (self?.productList!)!)
                 } else {
-                    self.delegate?.didFetchWithFailure()
+                    self?.delegate?.didFetchWithFailure()
                 }
             } else {
-                self.delegate?.didFetchWithFailure()
+                self?.delegate?.didFetchWithFailure()
             }
         })
     }
