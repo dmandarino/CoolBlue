@@ -15,6 +15,7 @@
                 <outlet property="productDescription" destination="gUK-xi-d6F" id="IZw-3z-eWK"/>
                 <outlet property="productName" destination="8Rg-PB-r45" id="HCj-q0-Plj"/>
                 <outlet property="productPrice" destination="cnx-Op-9cq" id="EgM-AT-sKv"/>
+                <outlet property="ratingView" destination="3a6-qA-nuO" id="M6d-4m-hX4"/>
                 <outlet property="scrollView" destination="x6f-MX-Ehw" id="LQ9-dr-90R"/>
                 <outlet property="view" destination="iN0-l3-epB" id="gRo-5M-Iuh"/>
             </connections>
@@ -55,13 +56,41 @@
                                     <color key="textColor" red="0.23921568630000001" green="0.56078431370000004" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a6-qA-nuO" customClass="CosmosView" customModule="Cosmos">
+                                    <rect key="frame" x="16" y="69" width="339" height="32"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="3a6-qA-nuO" firstAttribute="leading" secondItem="ces-BF-3gQ" secondAttribute="leading" constant="16" id="2dJ-qU-JBk"/>
                                 <constraint firstAttribute="height" constant="148" id="9Jo-JV-okd"/>
                                 <constraint firstItem="8Rg-PB-r45" firstAttribute="leading" secondItem="ces-BF-3gQ" secondAttribute="leading" constant="16" id="Nhw-tW-pVv"/>
+                                <constraint firstItem="3a6-qA-nuO" firstAttribute="top" secondItem="8Rg-PB-r45" secondAttribute="bottom" constant="8" id="QKF-Ia-fbs"/>
                                 <constraint firstItem="8Rg-PB-r45" firstAttribute="top" secondItem="ces-BF-3gQ" secondAttribute="top" constant="8" id="Xqw-3h-oDF"/>
+                                <constraint firstItem="cnx-Op-9cq" firstAttribute="top" secondItem="3a6-qA-nuO" secondAttribute="bottom" constant="8" id="dVM-wu-CYL"/>
                                 <constraint firstAttribute="bottom" secondItem="cnx-Op-9cq" secondAttribute="bottom" constant="8" id="rP5-o4-mO0"/>
+                                <constraint firstAttribute="trailing" secondItem="3a6-qA-nuO" secondAttribute="trailing" constant="16" id="rcU-3j-QA5"/>
                                 <constraint firstAttribute="trailing" secondItem="8Rg-PB-r45" secondAttribute="trailing" constant="16" id="tLw-DT-yiI"/>
                                 <constraint firstAttribute="trailing" secondItem="cnx-Op-9cq" secondAttribute="trailing" constant="16" id="yvK-9U-NMW"/>
                                 <constraint firstItem="cnx-Op-9cq" firstAttribute="leading" secondItem="ces-BF-3gQ" secondAttribute="leading" constant="16" id="yyB-wn-JtG"/>

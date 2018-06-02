@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Cosmos
 
 //MARK: - ProductDetailView
 
@@ -21,6 +22,7 @@ class ProductDetailView: UIViewController {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDescription: UITextView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var ratingView: CosmosView!
     
     convenience init(productId: Int) {
         self.init(nibName: String(describing: ProductDetailView.self), bundle: nil)
@@ -69,6 +71,8 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
         self.productPrice.text = product.salesPriceIncVat.currency
         self.productDescription.text = product.description.withoutHtmlTags
         self.pageControl.numberOfPages = product.images.count
+        self.ratingView.rating = product.reviewAverage/2
+        self.ratingView.text = String(product.reviewCount)
         showImages(images: product.images)
         hideSkeleton()
     }
