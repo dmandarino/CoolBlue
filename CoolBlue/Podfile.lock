@@ -2,12 +2,14 @@ PODS:
   - Alamofire (4.7.2)
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
+  - Cosmos (16.0.0)
   - SkeletonView (1.2)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireImage (~> 3.3)
+  - Cosmos (~> 16.0)
   - SkeletonView
   - SwiftyJSON (~> 4.0)
 
@@ -15,15 +17,17 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
+    - Cosmos
     - SkeletonView
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  Cosmos: 7bcee0fa858a9355a214f2a181be5dffcee42c81
   SkeletonView: d68962d45d1af038f6a110d2274b183df8f82752
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: b229b10845088804e6abd4ca3dfc213a0486c97d
+PODFILE CHECKSUM: 03edd4cb6d516c5a440ae97da0bb21d1f98e0f90
 
 COCOAPODS: 1.5.0
