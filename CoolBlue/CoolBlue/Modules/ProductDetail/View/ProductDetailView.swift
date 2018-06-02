@@ -20,10 +20,9 @@ class ProductDetailView: UIViewController {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDescription: UITextView!
-    @IBOutlet weak var productImage: UIImageView!
     
     convenience init(productId: Int) {
-        self.init(nibName: "ProductDetailView", bundle: nil)
+        self.init(nibName: String(describing: ProductDetailView.self), bundle: nil)
         self.productId = productId
     }
     
@@ -80,7 +79,7 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
             imageView.contentMode = .scaleAspectFit
             imageView.af_setImage(
                 withURL: URL(string: images[i])!,
-                placeholderImage: UIImage(named: "placeholder"),
+                placeholderImage: UIImage().placeholder,
                 imageTransition: .crossDissolve(0.2)
             )
             scrollView.contentSize.width = scrollView.frame.size.width * CGFloat(i + 1)

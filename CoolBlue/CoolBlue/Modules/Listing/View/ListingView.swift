@@ -24,7 +24,7 @@ class ListingView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     convenience init() {
-        self.init(nibName: "ListingView", bundle: nil)
+        self.init(nibName: String(describing: ListingView.self), bundle: nil)
     }
     
     override func viewDidLoad() {
@@ -83,7 +83,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.productPrice.text = collection[index].salesPriceIncVat.currency
         cell.productImage.af_setImage(
             withURL: URL(string: collection[index].images.first!)!,
-            placeholderImage: UIImage(named: "placeholder"),
+            placeholderImage: UIImage().placeholder,
             imageTransition: .crossDissolve(0.2)
         )
         

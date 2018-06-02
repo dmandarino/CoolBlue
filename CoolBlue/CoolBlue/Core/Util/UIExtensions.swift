@@ -52,3 +52,12 @@ extension String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 }
+
+//MARK: - UIImage
+
+extension UIImage {
+    var placeholder: UIImage {
+        return UIImage(named: "placeholder")!
+    }
+}
+

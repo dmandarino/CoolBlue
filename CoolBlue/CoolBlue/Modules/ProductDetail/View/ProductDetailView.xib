@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailView" customModule="CoolBlue" customModuleProvider="target">
             <connections>
                 <outlet property="productDescription" destination="gUK-xi-d6F" id="IZw-3z-eWK"/>
-                <outlet property="productImage" destination="n8F-bi-t5K" id="W3b-d3-3Yx"/>
                 <outlet property="productName" destination="8Rg-PB-r45" id="HCj-q0-Plj"/>
                 <outlet property="productPrice" destination="cnx-Op-9cq" id="EgM-AT-sKv"/>
                 <outlet property="scrollView" destination="x6f-MX-Ehw" id="LQ9-dr-90R"/>
@@ -26,20 +25,9 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x6f-MX-Ehw">
                     <rect key="frame" x="0.0" y="41" width="371" height="173"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n8F-bi-t5K">
-                            <rect key="frame" x="0.0" y="0.0" width="371" height="173"/>
-                        </imageView>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="n8F-bi-t5K" secondAttribute="trailing" id="3qy-bw-NCr"/>
-                        <constraint firstItem="n8F-bi-t5K" firstAttribute="top" secondItem="x6f-MX-Ehw" secondAttribute="top" id="9Hd-PT-LDJ"/>
                         <constraint firstAttribute="height" constant="173" id="Wfs-0x-EdU"/>
-                        <constraint firstItem="n8F-bi-t5K" firstAttribute="centerX" secondItem="x6f-MX-Ehw" secondAttribute="centerX" id="lv7-yM-0Tf"/>
-                        <constraint firstItem="n8F-bi-t5K" firstAttribute="centerY" secondItem="x6f-MX-Ehw" secondAttribute="centerY" id="rHU-7d-N2N"/>
-                        <constraint firstAttribute="bottom" secondItem="n8F-bi-t5K" secondAttribute="bottom" id="tQu-qT-zz0"/>
-                        <constraint firstItem="n8F-bi-t5K" firstAttribute="leading" secondItem="x6f-MX-Ehw" secondAttribute="leading" id="u5N-Xz-jdB"/>
                     </constraints>
                 </scrollView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNN-BH-1FH">

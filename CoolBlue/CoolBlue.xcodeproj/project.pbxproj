@@ -18,8 +18,8 @@
 		5A2AA48520BF9A9D00E16282 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A2AA48320BF9A9D00E16282 /* ProductCell.xib */; };
 		5A2AA48620BF9A9D00E16282 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AA48420BF9A9D00E16282 /* ProductCell.swift */; };
 		5A2AA48720BF9AC200E16282 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AA48420BF9A9D00E16282 /* ProductCell.swift */; };
-		5A2AA48920BFA32700E16282 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AA48820BFA32700E16282 /* Extensions.swift */; };
-		5A2AA48A20BFA32700E16282 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AA48820BFA32700E16282 /* Extensions.swift */; };
+		5A2AA48920BFA32700E16282 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AA48820BFA32700E16282 /* UIExtensions.swift */; };
+		5A2AA48A20BFA32700E16282 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2AA48820BFA32700E16282 /* UIExtensions.swift */; };
 		5A40228F20BCE9550015C0E7 /* ListingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40228E20BCE9540015C0E7 /* ListingPresenterTests.swift */; };
 		5A40229220BCE9700015C0E7 /* ListingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */; };
 		5A40229520BCF1BC0015C0E7 /* ListingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40229420BCF1BC0015C0E7 /* ListingViewTests.swift */; };
@@ -92,7 +92,7 @@
 		5A2757A120BBEAC700A7DB8F /* FetchProductListWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchProductListWorkerTests.swift; sourceTree = "<group>"; };
 		5A2AA48320BF9A9D00E16282 /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		5A2AA48420BF9A9D00E16282 /* ProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
-		5A2AA48820BFA32700E16282 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5A2AA48820BFA32700E16282 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		5A40228E20BCE9540015C0E7 /* ListingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingPresenterTests.swift; sourceTree = "<group>"; };
 		5A40229120BCE9700015C0E7 /* ListingInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingInteractorTests.swift; sourceTree = "<group>"; };
 		5A40229420BCF1BC0015C0E7 /* ListingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingViewTests.swift; sourceTree = "<group>"; };
@@ -538,7 +538,7 @@
 		A23DFA2320BE39DD004C8146 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				5A2AA48820BFA32700E16282 /* Extensions.swift */,
+				5A2AA48820BFA32700E16282 /* UIExtensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -776,7 +776,7 @@
 				5AD1CE6920C0F43700D35C0C /* ProductDetailWireframe.swift in Sources */,
 				5A27579920BBB87200A7DB8F /* Product.swift in Sources */,
 				5AD1CE6120C0F1F100D35C0C /* ProductDetailPresenter.swift in Sources */,
-				5A2AA48920BFA32700E16282 /* Extensions.swift in Sources */,
+				5A2AA48920BFA32700E16282 /* UIExtensions.swift in Sources */,
 				5AEE4FA320C080D6004B08A4 /* ProductDetailView.swift in Sources */,
 				5AD1CE6D20C0F4FD00D35C0C /* ProductDetailConfigurator.swift in Sources */,
 				5A58B91F20BA34F800890320 /* ListingView.swift in Sources */,
@@ -801,7 +801,7 @@
 				5A58B92320BA35FD00890320 /* ListingInteractor.swift in Sources */,
 				5AD1CE6E20C0F4FD00D35C0C /* ProductDetailConfigurator.swift in Sources */,
 				5A58B93E20BB0CFB00890320 /* ApiClientTests.swift in Sources */,
-				5A2AA48A20BFA32700E16282 /* Extensions.swift in Sources */,
+				5A2AA48A20BFA32700E16282 /* UIExtensions.swift in Sources */,
 				5AD1CE7F20C1266300D35C0C /* FetchProductWorkerProtocols.swift in Sources */,
 				5A27579A20BBB87200A7DB8F /* Product.swift in Sources */,
 				5A58B93B20BA617D00890320 /* ApiClient.swift in Sources */,
