@@ -184,6 +184,7 @@ extension ListingView: UISearchResultsUpdating {
         searchController.searchBar.placeholder = "May I help you?"
         searchController.searchBar.tintColor = UIColor.white
         navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     private func searchBarIsEmpty() -> Bool {
