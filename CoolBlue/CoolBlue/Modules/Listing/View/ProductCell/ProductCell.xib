@@ -36,6 +36,36 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBn-qQ-iD5" customClass="CosmosView" customModule="Cosmos">
+                    <rect key="frame" x="135" y="77" width="199" height="58"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="8cv-1q-DuG"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                            <color key="value" red="0.32549019610000002" green="0.59607843140000005" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -43,12 +73,15 @@
                 <constraint firstItem="qnA-gL-pOL" firstAttribute="bottom" secondItem="tqf-ol-urD" secondAttribute="bottom" id="33v-J6-HtV"/>
                 <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="239" id="8OH-Tz-j9i"/>
                 <constraint firstItem="qnA-gL-pOL" firstAttribute="top" secondItem="tqf-ol-urD" secondAttribute="top" id="9cY-yF-QP1"/>
+                <constraint firstItem="jBn-qQ-iD5" firstAttribute="leading" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="24" id="BCR-HJ-xwi"/>
+                <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="jBn-qQ-iD5" secondAttribute="trailing" constant="16" id="Fbu-Iz-jyi"/>
                 <constraint firstItem="sQq-Bj-xNO" firstAttribute="leading" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="24" id="QE7-8t-TR4"/>
                 <constraint firstItem="D5K-4N-Hua" firstAttribute="leading" secondItem="qnA-gL-pOL" secondAttribute="trailing" constant="24" id="VG2-od-7h2"/>
                 <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="D5K-4N-Hua" secondAttribute="trailing" constant="16" id="Zeg-da-9Yi"/>
                 <constraint firstItem="qnA-gL-pOL" firstAttribute="leading" secondItem="tqf-ol-urD" secondAttribute="leading" constant="16" id="aGc-n8-Ijd"/>
                 <constraint firstItem="tqf-ol-urD" firstAttribute="bottom" secondItem="sQq-Bj-xNO" secondAttribute="bottom" constant="20" id="crq-Eq-hpN"/>
                 <constraint firstItem="tqf-ol-urD" firstAttribute="trailing" secondItem="sQq-Bj-xNO" secondAttribute="trailing" constant="16" id="up3-t5-rMM"/>
+                <constraint firstItem="jBn-qQ-iD5" firstAttribute="top" secondItem="D5K-4N-Hua" secondAttribute="bottom" constant="9" id="xNJ-HJ-vFV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="tqf-ol-urD"/>
@@ -56,6 +89,7 @@
                 <outlet property="productImage" destination="qnA-gL-pOL" id="HTa-9h-CED"/>
                 <outlet property="productName" destination="D5K-4N-Hua" id="Obn-XE-whA"/>
                 <outlet property="productPrice" destination="sQq-Bj-xNO" id="gSz-ig-KMa"/>
+                <outlet property="ratingView" destination="jBn-qQ-iD5" id="Nsj-WX-sg6"/>
             </connections>
             <point key="canvasLocation" x="-331" y="-264"/>
         </view>

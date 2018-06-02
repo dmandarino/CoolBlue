@@ -87,6 +87,9 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
             imageTransition: .crossDissolve(0.2)
         )
         
+        cell.ratingView.rating = 2.7
+        cell.ratingView.text = "(123)"
+        
         return cell
     }
 
