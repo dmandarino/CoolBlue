@@ -59,6 +59,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         
         guard isProductListNotEmpty() else {
             setSkeletonableLabels(labels: labelsToBeSkeltonable)
+            cell.ratingView.showAnimatedGradientSkeleton()
             return cell
         }
         
@@ -87,8 +88,8 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
             imageTransition: .crossDissolve(0.2)
         )
         
-        cell.ratingView.rating = 2.7
-        cell.ratingView.text = "(123)"
+        cell.ratingView.rating = collection[index].reviewAverage/2
+        cell.ratingView.text = String(collection[index].reviewCount)
         
         return cell
     }

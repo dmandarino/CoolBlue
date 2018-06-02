@@ -133,16 +133,20 @@ private extension FetchProductWorker {
     private func parseJsonToProduct(json: JSON) -> Product? {
         guard let productId = json["productId"].int,
             let productName = json["productName"].string,
-            let salesPriceIncVat = json["salesPriceIncVat"].int else {
+            let salesPriceIncVat = json["salesPriceIncVat"].int,
+            let reviewAverage = json["reviewInformation"]["reviewSummary"]["reviewAverage"].double,
+            let reviewCount = json["reviewInformation"]["reviewSummary"]["reviewCount"].int else {
                 return nil
         }
-        
+    
         return Product(
             id: productId,
             name: productName,
             salesPriceIncVat: salesPriceIncVat,
             images: [],
-            description: ""
+            description: "",
+            reviewAverage: reviewAverage,
+            reviewCount: reviewCount
         )
     }
     

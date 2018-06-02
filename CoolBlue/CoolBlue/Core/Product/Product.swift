@@ -14,9 +14,6 @@ struct Product {
     var salesPriceIncVat: Int
     var images: [String]
     var description: String
-}
-
-struct Review {
-    var reviewAverage: Float?
-    var reviewCount: Int?
+    var reviewAverage: Double
+    var reviewCount: Int
 }
