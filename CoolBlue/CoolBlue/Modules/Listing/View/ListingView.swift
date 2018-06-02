@@ -72,13 +72,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     private func cellConfigured(cell: ProductCell, forIndex index: Int) -> ProductCell {
-        var collection: [Product] = []
-        
-        if isFiltering() {
-            collection = filteredProducList
-        } else {
-            collection = productList
-        }
+        var collection = defineProductListToBeShown()
         
         cell.productName.text = collection[index].name
         cell.productPrice.text = collection[index].salesPriceIncVat.currency
@@ -92,6 +86,13 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.ratingView.text = String(collection[index].reviewCount)
         
         return cell
+    }
+    
+    private func defineProductListToBeShown() -> [Product] {
+        if isFiltering() {
+            return filteredProducList
+        }
+        return productList
     }
 
     private func isProductListNotEmpty() -> Bool {
@@ -183,7 +184,6 @@ extension ListingView: UISearchResultsUpdating {
         searchController.searchBar.placeholder = "May I help you?"
         searchController.searchBar.tintColor = UIColor.white
         navigationItem.searchController = searchController
-        definesPresentationContext = true
     }
 
     private func searchBarIsEmpty() -> Bool {
