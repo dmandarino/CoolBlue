@@ -16,7 +16,7 @@ class FetchProductWorker {
     
     private var pageNumber = 0
     private var endpoint: String = ""
-    private var productList: [Product]?
+    private var productList: [Product] = []
     weak private var delegate: FetchProductWorkerOutputProtocol?
     
     init(delegate:FetchProductWorkerOutputProtocol) {
@@ -27,14 +27,6 @@ class FetchProductWorker {
         self.init(delegate: delegate)
         self.endpoint = endpoint
     }
-    
-    private func hasNotDefaultEndpoint() -> Bool {
-        return self.endpoint == ""
-    }
-    
-    private func isProductListNotEmpty() -> Bool {
-        return self.productList != nil && !(self.productList?.isEmpty)!
-    }
 }
 
 //MARK: - FetchProductListWorkerProtocol
@@ -42,49 +34,41 @@ class FetchProductWorker {
 extension FetchProductWorker: FetchProductListWorkerProtocol {
     
     func fetchProductList() {
+        let requestUrl = getFetchProductListRequestUrl()
+        ApiClient.sharedInstance.fetch(endpoint: requestUrl, completion: {
+            [weak self] response in
+                guard response != nil else {
+                    self?.delegate?.didFetchWithFailure()
+                    return
+                }
+                let json = JSON(response!)
+                self?.handleResponseFetchProductList(response: json)
+        })
+    }
+    
+    private func getFetchProductListRequestUrl() -> String {
         self.pageNumber += 1
         if hasNotDefaultEndpoint() {
             self.endpoint = "/search?query=apple"
         }
-        let requestUrl = endpoint+"&page=\(pageNumber)"
-        ApiClient.sharedInstance.fetch(endpoint: requestUrl,
-           completion: { [weak self] response in
-            if response != nil {
-                let json = JSON(response!)
-                let objects = json["products"]
-                self?.productList = self?.parseProductList(json: objects)
-                if (self?.isProductListNotEmpty())! {
-                    self?.delegate?.didFetchWithSuccess(productList: (self?.productList!)!)
-                } else {
-                    self?.delegate?.didFetchWithFailure()
-                }
-            } else {
-                self?.delegate?.didFetchWithFailure()
-            }
-        })
+        return endpoint+"&page=\(pageNumber)"
     }
     
-    private func parseProductList(json: JSON) -> [Product] {
-        var productList: [Product] = []
+    private func handleResponseFetchProductList(response: JSON) {
+        appendProdcutList(json: response["products"])
+        didFetchResult()
+    }
+    
+    private func appendProdcutList(json: JSON) {
         for (_, value) in json {
-            guard let productId = value["productId"].int,
-                let productName = value["productName"].string,
-                let salesPriceIncVat = value["salesPriceIncVat"].int,
-                let productImage = value["productImage"].string else {
-                    return productList
+            guard var product = parseJsonToProduct(json: value) else {
+                continue
             }
-            
-            let product = Product(
-                id: productId,
-                name: productName,
-                salesPriceIncVat: salesPriceIncVat,
-                images: [productImage],
-                description: ""
-            )
-            
+            if let productImage = value["productImage"].string {
+                product.images = [productImage]
+            }
             productList.append(product)
         }
-        return productList
     }
 }
 
@@ -93,52 +77,80 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
 extension FetchProductWorker: FetchProductWorkerProtocol {
     
     func fetchProduct(byId id: Int) {
-        if hasNotDefaultEndpoint() {
-            self.endpoint = "/product/"
-        }
-        let requestUrl = endpoint+"\(id)"
-        ApiClient.sharedInstance.fetch(endpoint: requestUrl,
-           completion: { [weak self] response in
-            if response != nil {
-                let json = JSON(response!)
-                let object = json["product"]
-                self?.productList = self?.parseProduct(json: object)
-                if (self?.isProductListNotEmpty())! {
-                    self?.delegate?.didFetchWithSuccess(productList: (self?.productList!)!)
-                } else {
+        let requestUrl = getFetchProductRequestUrl(id: id)
+        ApiClient.sharedInstance.fetch(endpoint: requestUrl, completion: {
+            [weak self] response in
+                guard response != nil else {
                     self?.delegate?.didFetchWithFailure()
+                    return
                 }
-            } else {
-                self?.delegate?.didFetchWithFailure()
-            }
+                let json = JSON(response!)
+                self?.handleResponseFetchById(response: json)
         })
     }
     
-    private func parseProduct(json: JSON) -> [Product] {
-        var productList: [Product] = []
-        var productImages: [String] = []
-        guard let productId = json["productId"].int,
-        let productName = json["productName"].string,
-        let salesPriceIncVat = json["salesPriceIncVat"].int,
-        let description = json["productText"].string else {
-            return productList
+    private func getFetchProductRequestUrl(id: Int) -> String {
+        if hasNotDefaultEndpoint() {
+            self.endpoint = "/product/"
         }
-        
+        return endpoint+"\(id)"
+    }
+    
+    private func handleResponseFetchById(response: JSON) {
+        appendProdcut(json: response["product"])
+        didFetchResult()
+    }
+    
+    private func appendProdcut(json: JSON) {
+        var productImages: [String] = []
+        guard var product = parseJsonToProduct(json: json) else {
+            return
+        }
         let productImagesJson = json["productImages"].arrayValue
-
         for image in productImagesJson {
             productImages.append(image.string!)
         }
+        product.images = productImages
+        if let description = json["productText"].string {
+            product.description = description
+        }
+        productList.append(product)
+    }
+}
+
+//MARK: - Private FetchProductWorker
+
+private extension FetchProductWorker {
+    
+    private func hasNotDefaultEndpoint() -> Bool {
+        return self.endpoint == ""
+    }
+    
+    private func isProductListNotEmpty() -> Bool {
+        return !self.productList.isEmpty
+    }
+    
+    private func parseJsonToProduct(json: JSON) -> Product? {
+        guard let productId = json["productId"].int,
+            let productName = json["productName"].string,
+            let salesPriceIncVat = json["salesPriceIncVat"].int else {
+                return nil
+        }
         
-        let product = Product(
+        return Product(
             id: productId,
             name: productName,
             salesPriceIncVat: salesPriceIncVat,
-            images: productImages,
-            description: description
+            images: [],
+            description: ""
         )
-            
-        productList.append(product)
-        return productList
+    }
+    
+    private func didFetchResult() {
+        if self.isProductListNotEmpty() {
+            self.delegate?.didFetchWithSuccess(productList: self.productList)
+        } else {
+            self.delegate?.didFetchWithFailure()
+        }
     }
 }
