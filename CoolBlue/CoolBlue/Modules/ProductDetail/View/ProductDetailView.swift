@@ -67,25 +67,25 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
         self.productName.text = product.name
         self.productPrice.text = product.salesPriceIncVat.currency
         self.productDescription.text = product.description.withoutHtmlTags
-        
-        let imageList = [UIImage(named: "placeholder"), UIImage(named: "coolblue-logo")]
-        
-        for i in 0..<imageList.count {
+        showImages(images: product.images)
+        hideSkeleton()
+    }
+    
+    private func showImages(images: [String]) {
+        for i in 0..<images.count {
             let imageView = UIImageView()
-            let x = self.productImage.frame.size.width * CGFloat(i)
-            imageView.frame = CGRect(x: x, y: 0, width: self.productImage.frame.width, height: self.productImage.frame.height)
+            let viewWidth = self.view.frame.size.width
+            let x = viewWidth * CGFloat(i)
+            imageView.frame = CGRect(x: x, y: 0, width: viewWidth, height: self.scrollView.frame.height)
             imageView.contentMode = .scaleAspectFit
             imageView.af_setImage(
-                withURL: URL(string: product.images[i])!,
+                withURL: URL(string: images[i])!,
                 placeholderImage: UIImage(named: "placeholder"),
                 imageTransition: .crossDissolve(0.2)
             )
-
             scrollView.contentSize.width = scrollView.frame.size.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
         }
-
-        hideSkeleton()
     }
     
     private func hideSkeleton() {
