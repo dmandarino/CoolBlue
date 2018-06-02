@@ -20,6 +20,7 @@ class ProductDetailView: UIViewController {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDescription: UITextView!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     convenience init(productId: Int) {
         self.init(nibName: String(describing: ProductDetailView.self), bundle: nil)
@@ -35,6 +36,7 @@ class ProductDetailView: UIViewController {
         productName.showAnimatedGradientSkeleton()
         productPrice.showAnimatedGradientSkeleton()
         productDescription.showAnimatedGradientSkeleton()
+        scrollView.delegate = self
         updateView()
     }
 }
@@ -66,6 +68,7 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
         self.productName.text = product.name
         self.productPrice.text = product.salesPriceIncVat.currency
         self.productDescription.text = product.description.withoutHtmlTags
+        self.pageControl.numberOfPages = product.images.count
         showImages(images: product.images)
         hideSkeleton()
     }
@@ -91,5 +94,15 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
         self.productName.hideSkeleton()
         self.productPrice.hideSkeleton()
         self.productDescription.hideSkeleton()
+    }
+}
+
+//MARK: - UIScrollViewDelegate
+
+extension ProductDetailView: UIScrollViewDelegate {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(pageNumber)
     }
 }
