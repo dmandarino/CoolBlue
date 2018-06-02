@@ -103,7 +103,9 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     private func setupCollectionView() {
-        self.collectionView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.register(UINib.init(nibName: String(describing: ProductCell.self),
+                                                bundle: nil),
+                                                forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }

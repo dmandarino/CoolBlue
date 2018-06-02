@@ -35,9 +35,10 @@ class ProductDetailView: UIViewController {
     }
     
     private func setupView() {
-        productName.showAnimatedGradientSkeleton()
-        productPrice.showAnimatedGradientSkeleton()
-        productDescription.showAnimatedGradientSkeleton()
+        self.productName.showAnimatedGradientSkeleton()
+        self.productPrice.showAnimatedGradientSkeleton()
+        self.productDescription.showAnimatedGradientSkeleton()
+        self.ratingView.showAnimatedGradientSkeleton()
         scrollView.delegate = self
         updateView()
     }
@@ -98,6 +99,7 @@ extension ProductDetailView: ProductDetailPresenterOutputProtocol {
         self.productName.hideSkeleton()
         self.productPrice.hideSkeleton()
         self.productDescription.hideSkeleton()
+        self.ratingView.hideSkeleton()
     }
 }
 
