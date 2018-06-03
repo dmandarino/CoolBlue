@@ -16,7 +16,6 @@ class FetchProductWorker {
     
     private var pageNumber = 0
     private var endpoint: String = ""
-    private var productList: [Product] = []
     weak private var delegate: FetchProductWorkerOutputProtocol?
     
     init(delegate:FetchProductWorkerOutputProtocol) {
@@ -55,11 +54,12 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
     }
     
     private func handleResponseFetchProductList(response: JSON) {
-        appendProdcutList(json: response["products"])
-        didFetchResult()
+        let productList = parseProdcutList(json: response["products"])
+        didFetchResult(productList: productList)
     }
     
-    private func appendProdcutList(json: JSON) {
+    private func parseProdcutList(json: JSON) -> [Product] {
+        var productList: [Product] = []
         for (_, value) in json {
             guard var product = parseJsonToProduct(json: value) else {
                 continue
@@ -69,6 +69,7 @@ extension FetchProductWorker: FetchProductListWorkerProtocol {
             }
             productList.append(product)
         }
+        return productList
     }
 }
 
@@ -97,14 +98,17 @@ extension FetchProductWorker: FetchProductWorkerProtocol {
     }
     
     private func handleResponseFetchById(response: JSON) {
-        appendProdcut(json: response["product"])
-        didFetchResult()
+        guard let product = parseProduct(json: response["product"]) else {
+            didFetchResult(productList: [])
+            return
+        }
+        didFetchResult(productList: [product])
     }
     
-    private func appendProdcut(json: JSON) {
+    private func parseProduct(json: JSON) -> Product? {
         var productImages: [String] = []
         guard var product = parseJsonToProduct(json: json) else {
-            return
+            return nil
         }
         let productImagesJson = json["productImages"].arrayValue
         for image in productImagesJson {
@@ -114,7 +118,7 @@ extension FetchProductWorker: FetchProductWorkerProtocol {
         if let description = json["productText"].string {
             product.description = description
         }
-        productList.append(product)
+        return product
     }
 }
 
@@ -126,8 +130,8 @@ private extension FetchProductWorker {
         return self.endpoint == ""
     }
     
-    private func isProductListNotEmpty() -> Bool {
-        return !self.productList.isEmpty
+    private func isProductListNotEmpty(productList: [Product]) -> Bool {
+        return !productList.isEmpty
     }
     
     private func parseJsonToProduct(json: JSON) -> Product? {
@@ -150,9 +154,9 @@ private extension FetchProductWorker {
         )
     }
     
-    private func didFetchResult() {
-        if self.isProductListNotEmpty() {
-            self.delegate?.didFetchWithSuccess(productList: self.productList)
+    private func didFetchResult(productList: [Product]) {
+        if !productList.isEmpty {
+            self.delegate?.didFetchWithSuccess(productList: productList)
         } else {
             self.delegate?.didFetchWithFailure()
         }

@@ -14,6 +14,7 @@ class ListingInteractor {
     
     weak var delegate: ListingInteractorOutputProtocol?
     private var worker:FetchProductListWorkerProtocol?
+    private var productList: [Product] = []
     
     init() {
         self.worker = FetchProductWorker(delegate: self)
@@ -39,7 +40,8 @@ extension ListingInteractor: ListingInteractorProtocol {
 extension ListingInteractor: FetchProductWorkerOutputProtocol {
     
     func didFetchWithSuccess(productList: [Product]) {
-        delegate?.productFetched(productList: productList)
+        self.productList.append(contentsOf: productList)
+        delegate?.productFetched(productList: self.productList)
     }
     
     func didFetchWithFailure(){
