@@ -71,6 +71,16 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
         notifyDidSelectedProduct(forIndexPath: indexPath)
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if isLastProduct(itemNumber: indexPath.row) {
+            updateView()
+        }
+    }
+    
+    private func isLastProduct(itemNumber: Int) -> Bool  {
+        return itemNumber == productList.count - 1
+    }
+    
     private func cellConfigured(cell: ProductCell, forIndex index: Int) -> ProductCell {
         var collection = defineProductListToBeShown()
         
@@ -100,7 +110,7 @@ extension ListingView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     private func updateCollectionView() {
-        collectionView.reloadData()
+        self.collectionView.reloadData()
     }
     
     private func setupCollectionView() {
