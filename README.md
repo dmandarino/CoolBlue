@@ -29,4 +29,6 @@ pod install
 
 Now you can open __CoolBlue.xcworkspace__
 
+## Gitflow
 
+This project uses Gitflow. So, do not forget checking `develop` branch. Maybe it's ahead of master.
